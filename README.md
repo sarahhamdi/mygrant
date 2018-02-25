@@ -1,4 +1,4 @@
-[logo]: src/assets/large-logo.png "MyGrant Logo"
+[logo]: src/assets/large-logo.svg "MyGrant Logo"
 ![alt text][logo]
 
 ## MyGRANT - A Grant-Writing Helper
