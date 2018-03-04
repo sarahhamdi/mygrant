@@ -18,3 +18,10 @@
 - creating a profile for each grant
 - displaying them in order of due date
 - marking grants by tags you define
+
+#### To Get Started:
+
+- `npm install` or individually install axios, express, mongoose, react, react-dom, and react-scripts
+- `npm start` to start
+- `npm run start` to watch for changes
+- `npm run build` to build
