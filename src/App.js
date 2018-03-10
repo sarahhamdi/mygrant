@@ -42,6 +42,7 @@ class App extends Component {
     return (
       <div className="App">
 
+        <Header />
         <Image src={logo} />
         <H1 text="Header 1" />
         <H2 text="Header 2" />
