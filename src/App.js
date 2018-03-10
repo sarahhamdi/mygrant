@@ -54,8 +54,10 @@ class App extends Component {
         <InputTextArea name="newtextform" placeholder="some placeholder text" label="a text input" id="newInputText" />
 
         <H1 text="Registration Form" />
-        <FormRegistration />
+        <FormRegistration name="form-registration" id="form-registration"/>
 
+        <H1 text="Login Form" />
+        <FormLogin name="form-login" id="form-login"/>
       </div>
     );
   }
