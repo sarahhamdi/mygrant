@@ -52,6 +52,10 @@ class App extends Component {
         <ButtonWithIcon type={add} text="button with icon" />
         <InputText name="newtextform" placeholder="some placeholder text" label="a text input" id="newInputText"/>
         <InputTextArea name="newtextform" placeholder="some placeholder text" label="a text input" id="newInputText" />
+
+        <H1 text="Registration Form" />
+        <FormRegistration />
+
       </div>
     );
   }
