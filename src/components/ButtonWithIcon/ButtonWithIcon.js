@@ -1,16 +1,8 @@
-import Icon from '../Icon/Icon'
-import Button from '../Button/Button'
 import React from 'react';
+import Icon from '../Icon/Icon';
 
-import React from 'react';
 
-const ButtonWithIcon = ({ text, action, extraClass, icon }) => (
-  <Button 
-    extraclass="button--icon" 
-    action={action} 
-    text={<Icon 
-            type={icon} 
-            description={`an icon of ${icon}`} /> + {text}} />
+const ButtonWithIcon = ({ text, action, extraClass, type }) => ( <button className={`button ${extraClass}`} onChange={() => action}><Icon type={type} />{text}</button>
 )
 
 export default ButtonWithIcon;
