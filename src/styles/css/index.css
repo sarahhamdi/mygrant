@@ -200,7 +200,8 @@ ul li {
   background: yellow; }
 
 button {
-  background: yellow; }
+  background: #ff6e6e;
+  color: #f8f8f8; }
 
 html {
   font-size: 62.5%; }
