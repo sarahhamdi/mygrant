@@ -202,14 +202,27 @@ ul li {
 button {
   font-size: 20px;
   font-size: 2rem;
-  padding: 20px 70px;
+  padding: 16px 32px;
   margin: 0;
   background: #ff6e6e;
   border: none;
   color: #f8f8f8;
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  transition: all 0.3s;
+  border-bottom: 4px solid #ed5656; }
+  button:hover {
+    background: #ed5656; }
+
+.button--icon {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  padding-right: 36px; }
+  .button--icon .icon {
+    margin-right: 16px;
+    width: 32px; }
 
 html {
   font-size: 62.5%; }

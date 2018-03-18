@@ -1,0 +1,10 @@
+.button--icon {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  padding-right: 36px;
+  .icon {
+    margin-right: 16px;
+    width: 32px;
+  }
+}

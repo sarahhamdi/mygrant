@@ -1,10 +1,15 @@
 button {
   @include fontSize(20);
-  @include padding-margin(20px 70px, 0);
+  @include padding-margin(16px 32px, 0);
   background: $salmon;
   border: none;
   color: $desert-storm; 
   font-family: $font-family--body;
   font-weight: $font-weight--normal;
   text-transform: uppercase;
+  transition: all 0.3s;
+  border-bottom: 4px solid #ed5656;
+  &:hover {
+    background: #ed5656;
+  }
 }
