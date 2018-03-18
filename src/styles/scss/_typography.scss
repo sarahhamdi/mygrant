@@ -21,31 +21,31 @@ body {
     color: $charcoal;
 }
 
-h1, h2, h3, h4 {
+.header-1, .header-2, .header-3, .header-4 {
     @include padding-margin(0, 1.4rem 0 0.5rem 0);
     font-family: $font-family--header;
     font-weight: $font-weight--normal;
     letter-spacing: 1px;
 }
 
-h1, h2, h3 {
+.header-1, .header-2, .header-3 {
     text-transform: uppercase;
 }
 
-h1 {
+.header-1 {
     @include fontSize(34);
     @include padding-margin(0, 0 0 0.5rem 0);
 }
 
-h2 {
+.header-2 {
     @include fontSize(26);
 }
 
-h3 {
+.header-3 {
     @include fontSize(20);
 }
 
-h4 {
+.header-4 {
     @include fontSize(16);
     text-transform: uppercase;
     font-weight: $font-weight--normal;

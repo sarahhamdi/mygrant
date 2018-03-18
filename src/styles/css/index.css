@@ -141,31 +141,31 @@ body {
   line-height: 1.5;
   color: #242424; }
 
-h1, h2, h3, h4 {
+.header-1, .header-2, .header-3, .header-4 {
   padding: 0;
   margin: 1.4rem 0 0.5rem 0;
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
   letter-spacing: 1px; }
 
-h1, h2, h3 {
+.header-1, .header-2, .header-3 {
   text-transform: uppercase; }
 
-h1 {
+.header-1 {
   font-size: 34px;
   font-size: 3.4rem;
   padding: 0;
   margin: 0 0 0.5rem 0; }
 
-h2 {
+.header-2 {
   font-size: 26px;
   font-size: 2.6rem; }
 
-h3 {
+.header-3 {
   font-size: 20px;
   font-size: 2rem; }
 
-h4 {
+.header-4 {
   font-size: 16px;
   font-size: 1.6rem;
   text-transform: uppercase;
