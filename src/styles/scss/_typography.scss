@@ -64,6 +64,9 @@ p,
     font-weight: $font-weight--light;
     letter-spacing: 1px;
 }
+.paragraph--right {
+    text-align: right;
+}
 
 strong,
 .strong {
@@ -75,8 +78,9 @@ a:visited {
     color: $salmon;
     font-weight: $font-weight--normal;
     text-decoration: none;
+    transition: all 0.3s;
     &:hover {
-        color: $aluminium;
+        color: #ed5656;
     }
 }
 

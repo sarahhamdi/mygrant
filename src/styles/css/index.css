@@ -184,6 +184,9 @@ p,
   font-weight: 300;
   letter-spacing: 1px; }
 
+.paragraph--right {
+  text-align: right; }
+
 strong,
 .strong {
   font-weight: 600; }
@@ -192,10 +195,11 @@ a,
 a:visited {
   color: #ff6e6e;
   font-weight: 400;
-  text-decoration: none; }
+  text-decoration: none;
+  transition: all 0.3s; }
   a:hover,
   a:visited:hover {
-    color: #9b9b9b; }
+    color: #ed5656; }
 
 ul li {
   font-size: 14px;
@@ -242,36 +246,31 @@ button {
     padding: 0;
     margin: 0 auto;
     list-style: none;
-    max-width: 1200px;
-    color: #f8f8f8; }
+    max-width: 1200px; }
   .header__nav-list-item {
     padding: 40px 30px 16px 30px;
-    margin: 0; }
-    .header__nav-list-item:hover {
-      border-top: 8px solid #ed5656;
-      padding-top: 32px; }
+    margin: 0;
+    align-self: center; }
     .header__nav-list-item .header-3 {
-      text-transform: none; }
-  .header .header__logo:hover,
-  .header .header__account-icon:hover {
-    border: none;
-    padding-top: 40px; }
-  .header .header__account-icon {
+      text-transform: none;
+      margin: 0; }
+    .header__nav-list-item a {
+      color: #f8f8f8; }
+      .header__nav-list-item a:hover {
+        color: white; }
+  .header .header__account-icon a {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
     align-content: center;
     color: #242424; }
-    .header .header__account-icon:hover {
-      border-top: 8px solid #242424;
-      padding-top: 32px; }
-    .header .header__account-icon .paragraph {
-      font-weight: 700;
-      text-transform: uppercase;
-      font-size: 14px;
-      margin: 0;
-      align-self: center;
-      margin-right: 5px; }
+  .header .header__account-icon .paragraph {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin: 0;
+    align-self: center;
+    margin-right: 5px; }
 
 .inputtext__input {
   padding: 12px 4px;
@@ -315,11 +314,17 @@ button {
 .form--login .button {
   width: 100%; }
 
-.App .form--registration,
-.App .form--login {
-  max-width: 600px;
-  padding: 30px;
-  margin: 100px 0; }
+.page__login {
+  width: 960px;
+  margin: 75px auto; }
+  .page__login #form-login {
+    width: 400px; }
+
+.page__registration {
+  width: 960px;
+  margin: 75px auto; }
+  .page__registration #form-registration {
+    width: 400px; }
 
 html {
   font-size: 62.5%; }

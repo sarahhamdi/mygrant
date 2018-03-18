@@ -11,11 +11,13 @@ const Header = () => (
         <li className="header__nav-list-item header__logo">
           <Image src={logo} />
         </li>
-        <li className="header__nav-list-item"><h2 className="header-3">Org Details</h2></li>
-        <li className="header__nav-list-item"><h2 className="header-3">Grants</h2></li>
-        <li className="header__nav-list-item"><h2 className="header-3">Data</h2></li>
+        <li className="header__nav-list-item"><h2 className="header-3"><a href="/org-details">Org Details</a></h2></li>
+        <li className="header__nav-list-item"><h2 className="header-3"><a href="/grants">Grants</a></h2></li>
+        <li className="header__nav-list-item"><h2 className="header-3"><a href="/data">Data</a></h2></li>
         <li className="header__nav-list-item header__account-icon">
-          <p className="paragraph">Sarah Hamdi</p> <Icon type={person}/>
+          <a href="/account">
+            <p className="paragraph">Sarah Hamdi</p> <Icon type={person}/>
+          </a>
         </li>
       </ul>
     </nav>

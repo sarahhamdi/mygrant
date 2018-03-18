@@ -24,6 +24,7 @@ import Paragraph from './components/Paragraph/Paragraph';
 import Header from './components/Header/Header';
 import FormLogin from './components/FormLogin/FormLogin';
 import FormRegistration from './components/FormRegistration/FormRegistration';
+import FormOrgInfo from './components/FormOrgInfo/FormOrgInfo'
 
 const registration = () => (
   <main className="page__registration">
@@ -36,7 +37,6 @@ const login = () => (
   <main className="page__login">
     <Image src={logo} />
     <FormLogin name="form-login" id="form-login"/>
-    <a href="/registration">register here</a>
   </main>
 );
 
@@ -46,9 +46,17 @@ const grants = () => (
   </main>
 );
 
-const myDetails = () => (
-  <main className="page__my-details">
+const orgDetails = () => (
+  <main className="page__org-details">
     <Header />
+    <ButtonWithIcon type={addLight} text="Add a Field" />
+
+    <FormOrgInfo name="form-org-info" id="form-org-info" />
+
+    <h3 className="header-3">Organization Name</h3>
+    <p className="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <h3 className="header-3">Organization Description</h3>
+    <p className="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
   </main>
 );
 
@@ -86,11 +94,12 @@ class App extends Component {
         <Router className="App">
           <React.Fragment>
             <Route exact path='/' component={login} />
-            <Route exact path='/registration' component={registration} />
+            <Route path='/login' component={login} />
+            <Route path='/registration' component={registration} />
             <Route path='/grants' component={grants} />
-            <Route exact path='/my-details' component={myDetails} />
-            <Route exact path='/data' component={data} />
-            <Route exact path='/account' component={account} />
+            <Route path='/org-details' component={orgDetails} />
+            <Route path='/data' component={data} />
+            <Route path='/account' component={account} />
           </React.Fragment>
         </Router>
     );
