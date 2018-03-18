@@ -265,11 +265,30 @@ button {
   color: #242424;
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
-  width: 100%; }
+  width: 100%;
+  transition: background 0.3s; }
   .inputtext__input:focus {
-    outline: 2px solid #fff5f4;
-    box-shadow: none; }
+    background: #fff9f8;
+    box-shadow: none;
+    outline: 2px solid #fff5f4; }
   .inputtext__input::placeholder {
+    color: #d3d3d3; }
+
+.textarea__input {
+  padding: 12px 4px;
+  margin: 20px 0 40px 0;
+  border: 2px solid #fdbdb3;
+  color: #242424;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  min-height: 200px;
+  transition: background 0.3s;
+  width: 100%; }
+  .textarea__input:focus {
+    background: #fff9f8;
+    box-shadow: none;
+    outline: 2px solid #fff5f4; }
+  .textarea__input::placeholder {
     color: #d3d3d3; }
 
 .form--registration .button {

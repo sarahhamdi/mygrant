@@ -7,9 +7,11 @@
     font-family: $font-family--body;
     font-weight: $font-weight--light;
     width: 100%;
+    transition: background 0.3s;
     &:focus {
-      outline: 2px solid #fff5f4;
+      background: #fff9f8;
       box-shadow: none;
+      outline: 2px solid #fff5f4;
     }
     &::placeholder {
       color: #d3d3d3;

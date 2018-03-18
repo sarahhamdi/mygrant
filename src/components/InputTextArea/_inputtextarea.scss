@@ -1,0 +1,20 @@
+.textarea{
+  &__input {
+    @include padding-margin(12px 4px, 20px 0 40px 0);
+    border: 2px solid $melon;
+    color: $charcoal;
+    font-family: $font-family--body;
+    font-weight: $font-weight--light;
+    min-height: 200px;
+    transition: background 0.3s;
+    width: 100%;
+    &:focus {
+      background: #fff9f8;
+      box-shadow: none;
+      outline: 2px solid #fff5f4;
+    }
+    &::placeholder {
+      color: #d3d3d3;
+    }
+  }
+}
