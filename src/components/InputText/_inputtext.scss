@@ -1,0 +1,15 @@
+.inputtext {
+  &__input {
+    @include padding-margin(12px 4px, 20px 0 40px 0);
+    border: none;
+    border-bottom: 2px solid $melon;
+    color: $aluminium;
+    font-family: $font-family--body;
+    font-weight: $font-weight--light;
+    width: 100%;
+    &:focus {
+      outline: 2px solid #fff5f4;
+      box-shadow: none;
+    }
+  }
+}

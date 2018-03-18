@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './assets/large-logo.svg';
 import add from './assets/icon-add.svg';
+import addLight from './assets/icon-add-light.svg';
 import axios from 'axios';
 
 // components
@@ -41,8 +42,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-
         <Header />
+        <H1 text="Random Components" />
         <Image src={logo} />
         <H1 text="Header 1" />
         <H2 text="Header 2" />
@@ -50,7 +51,7 @@ class App extends Component {
         <Paragraph text="Sphinx of black quartzzz, judge my vow" />
         <Icon type={add} />
         <Button text="a button"/>
-        <ButtonWithIcon type={add} text="button with icon" />
+        <ButtonWithIcon type={addLight} text="button with icon" />
         <InputText name="newtextform" placeholder="some placeholder text" label="a text input" id="newInputText"/>
         <InputTextArea name="newtextform" placeholder="some placeholder text" label="a text input" id="newInputText" />
 

@@ -1,12 +1,12 @@
 import React from 'react';
 
 const InputText = ({ extraClass, id, label, type, name, placeholder, required, pattern}) => (
-  <div className={`inputext ${extraClass}`}>
-    <label className={`inputext__label`} htmlFor={id}>{label}</label>
+  <div className={`inputtext ${extraClass}`}>
+    <label className={`header-3 inputtext__label`} htmlFor={id}>{label}</label>
 
     {required ? 
       <input 
-        className={`inputext__input`} 
+        className={`inputtext__input`} 
         type={type} 
         id={id} 
         name={name} 
@@ -15,7 +15,7 @@ const InputText = ({ extraClass, id, label, type, name, placeholder, required, p
         required
         />
       : <input 
-          className={`inputext__input`} 
+          className={`inputtext__input`} 
           type={type} 
           id={id} 
           name={name} 
