@@ -1,0 +1,28 @@
+.header {
+  // padding: 40px 30px 16px 30px;
+  background: $salmon;
+  &__nav-list {
+    @include flexbox (row wrap, space-between, flex-end);
+    @include padding-margin (0, 0 auto);
+    list-style: none;
+    max-width: 1200px;
+    color: $desert-storm;
+  }
+  &__nav-list-item { 
+    @include padding-margin (40px 30px 16px 30px, 0);
+    &:hover {
+      border-top: 8px solid #ed5656;
+      padding-top: 32px;
+    }
+    .header-3 {
+      text-transform: none;
+    }
+  }
+  .header__logo,
+  .header__account-icon {
+    &:hover {
+      border: none;
+      padding-top: 40px;
+    }
+  }
+}

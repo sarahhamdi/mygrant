@@ -224,6 +224,31 @@ button {
     margin-right: 16px;
     width: 32px; }
 
+.header {
+  background: #ff6e6e; }
+  .header__nav-list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-content: flex-end;
+    padding: 0;
+    margin: 0 auto;
+    list-style: none;
+    max-width: 1200px;
+    color: #f8f8f8; }
+  .header__nav-list-item {
+    padding: 40px 30px 16px 30px;
+    margin: 0; }
+    .header__nav-list-item:hover {
+      border-top: 8px solid #ed5656;
+      padding-top: 32px; }
+    .header__nav-list-item .header-3 {
+      text-transform: none; }
+  .header .header__logo:hover,
+  .header .header__account-icon:hover {
+    border: none;
+    padding-top: 40px; }
+
 html {
   font-size: 62.5%; }
 
