@@ -9,8 +9,7 @@
     transition: background 0.3s;
     width: 100%;
     &:hover,
-    &:focus,
-    &:valid {
+    &:focus {
       background: #fff9f8;
       box-shadow: none;
       outline: 2px solid #fff5f4;
