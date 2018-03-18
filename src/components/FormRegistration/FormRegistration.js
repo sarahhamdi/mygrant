@@ -3,7 +3,7 @@ import InputText from '../InputText/InputText'
 import Button from '../Button/Button'
 
 const FormRegistration= ({ name, id }) => (
-  <form name={name} id={id} method="post">
+  <form name={name} id={id} method="post" className="form--registration">
     <InputText 
       type="text"
       name="user-name" 

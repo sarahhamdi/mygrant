@@ -270,6 +270,18 @@ button {
     outline: 2px solid #fff5f4;
     box-shadow: none; }
 
+.form--registration .button {
+  width: 100%; }
+
+.form--login .button {
+  width: 100%; }
+
+.App .form--registration,
+.App .form--login {
+  max-width: 600px;
+  padding: 30px;
+  margin: 100px 0; }
+
 html {
   font-size: 62.5%; }
 

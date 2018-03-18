@@ -3,7 +3,7 @@ import InputText from '../InputText/InputText'
 import Button from '../Button/Button'
 
 const FormLogin= ({ name, id }) => (
-  <form name={name} id={id} method="post">
+  <form name={name} id={id} method="post" className="form--login">
     <InputText 
       type="email"
       name="Your Email" 
