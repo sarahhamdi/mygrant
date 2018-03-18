@@ -1,0 +1,60 @@
+// COLOURS
+
+// GREYS
+$charcoal       : rgba(36, 36, 36, 1.00);
+$aluminium      : rgba(155, 155, 155, 1.00);
+$desert-storm   : rgba(248, 248, 248, 1.00);
+
+// OTHERS
+$salmon         : rgba(255, 110, 110, 1.00);
+$melon          : rgba(253, 189, 179, 1.00);
+$forget-me-not  : rgba(254, 242, 238, 1.00);
+
+$text-shadow    : 3px 4px 7px 0px rgba(155, 155, 155, 0.39);
+$box-shadow     : 3px 4px 7px 0px rgba(155, 155, 155, 0.39);
+
+
+$zindex-minus1  : -1000;
+$zindex-plus1   : 1000;
+$zindex-2       : 2000;
+$zindex-3       : 3000;
+$zindex-4       : 4000;
+$zindex-5       : 5000;
+$zindex-6       : 6000;
+$zindex-7       : 7000;
+$zindex-8       : 8000;
+$zindex-9       : 9000;
+$zindex-10      : 10000;
+
+
+// FUN FUN FUNCTIONS
+
+// Mixins
+@mixin fontSize($sizeValue) {
+    font-size: $sizeValue * 1px;
+    font-size: ($sizeValue/10) * 1rem;
+}
+
+@mixin padding-margin ($padding, $margin) {
+    padding: $padding;
+    margin: $margin;
+}
+
+@mixin colors ($background, $color) {
+    background: $background;
+    color: $color;
+}
+
+@mixin flexbox ($flexflow, $justify-content, $align-content) {
+    display: flex;
+    flex-flow: $flexflow;
+    justify-content: $justify-content;
+    align-content: $align-content
+}
+
+@mixin grid ($column, $row, $gutter) {
+    display: grid;
+    grid-template-columns: $column;
+    grid-template-rows: $row;
+    grid-gap: $gutter;
+}

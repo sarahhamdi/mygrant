@@ -1,0 +1,87 @@
+// FONTS
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600,600italic,700);
+
+$font-family--header    : "Open Sans", sans-serif;
+$font-family--body      : "Open Sans", sans-serif;
+
+// Font Weights
+$font-weight--light     : 300;
+$font-weight--normal    : 400;
+$font-weight--bold      : 600;
+$font-weight--bolder    : 700;
+
+$base__line-height: 1.5;
+
+// TYPOGRAPHY
+body {
+    @include fontSize(16);
+    font-family: $font-family--body;
+    font-weight: $font-weight--light;
+    line-height: $base__line-height;
+    color: $charcoal;
+}
+
+h1, h2, h3, h4 {
+    @include padding-margin(0, 1.4rem 0 0.5rem 0);
+    font-family: $font-family--header;
+    font-weight: $font-weight--normal;
+    letter-spacing: 1px;
+}
+
+h1, h2, h3 {
+    text-transform: uppercase;
+}
+
+h1 {
+    @include fontSize(34);
+    @include padding-margin(0, 0 0 0.5rem 0);
+}
+
+h2 {
+    @include fontSize(26);
+}
+
+h3 {
+    @include fontSize(20);
+}
+
+h4 {
+    @include fontSize(16);
+    text-transform: uppercase;
+    font-weight: $font-weight--normal;
+
+}
+
+p {
+    @include fontSize(16);
+    font-weight: $font-weight--light;
+    letter-spacing: 1px;
+}
+
+.strong {
+    font-weight: $font-weight--bold;
+}
+
+a,
+a:visited {
+    color: $salmon;
+    font-weight: $font-weight--normal;
+    text-decoration: none;
+    &:hover {
+        color: $aluminium;
+    }
+}
+
+ul {
+    li {
+        @include fontSize(14);
+    }
+}
+
+.accordion {
+    font-weight: $font-weight--bold;
+}
+
+:selection {
+    background: yellow;
+}

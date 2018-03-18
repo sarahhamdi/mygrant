@@ -1,9 +1,21 @@
-@import 'app';
-// @import '../components/button'
+// base styles
+@import 'setup';
+@import 'utils';
+@import 'typography';
+
+// components
 @import '../../components/Button/_button.scss';
+
+// pages
+@import 'app';
+
+html {
+  font-size: 62.5%;
+}
 
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  // background: yellow;
 }

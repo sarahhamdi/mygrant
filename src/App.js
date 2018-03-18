@@ -47,7 +47,7 @@ class App extends Component {
         <H1 text="Header 1" />
         <H2 text="Header 2" />
         <H3 text="Header 3" />
-        <Paragraph text="Sphinx of black quartz, judge my vow" />
+        <Paragraph text="Sphinx of black quartzzz, judge my vow" />
         <Icon type={add} />
         <Button text="a button"/>
         <ButtonWithIcon type={add} text="button with icon" />
