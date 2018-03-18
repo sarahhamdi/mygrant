@@ -1,4 +1,10 @@
 button {
+  @include fontSize(20);
+  @include padding-margin(20px 70px, 0);
   background: $salmon;
-  color: $desert-storm 
+  border: none;
+  color: $desert-storm; 
+  font-family: $font-family--body;
+  font-weight: $font-weight--normal;
+  text-transform: uppercase;
 }
