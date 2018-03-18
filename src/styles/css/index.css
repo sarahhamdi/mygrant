@@ -256,6 +256,22 @@ button {
   .header .header__account-icon:hover {
     border: none;
     padding-top: 40px; }
+  .header .header__account-icon {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-content: center;
+    color: #242424; }
+    .header .header__account-icon:hover {
+      border-top: 8px solid #242424;
+      padding-top: 32px; }
+    .header .header__account-icon .paragraph {
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 14px;
+      margin: 0;
+      align-self: center;
+      margin-right: 5px; }
 
 .inputtext__input {
   padding: 12px 4px;
@@ -267,10 +283,11 @@ button {
   font-weight: 300;
   width: 100%;
   transition: background 0.3s; }
-  .inputtext__input:focus {
+  .inputtext__input:hover, .inputtext__input:focus {
     background: #fff9f8;
     box-shadow: none;
-    outline: 2px solid #fff5f4; }
+    outline: 2px solid #fff5f4;
+    border-bottom: 2px solid #fff9f8; }
   .inputtext__input::placeholder {
     color: #d3d3d3; }
 
@@ -284,10 +301,11 @@ button {
   min-height: 200px;
   transition: background 0.3s;
   width: 100%; }
-  .textarea__input:focus {
+  .textarea__input:hover, .textarea__input:focus, .textarea__input:valid {
     background: #fff9f8;
     box-shadow: none;
-    outline: 2px solid #fff5f4; }
+    outline: 2px solid #fff5f4;
+    border: 2px solid #fff9f8; }
   .textarea__input::placeholder {
     color: #d3d3d3; }
 
@@ -308,7 +326,6 @@ html {
 
 body {
   margin: 0;
-  padding: 0;
-  font-family: sans-serif; }
+  padding: 0; }
 
 /*# sourceMappingURL=index.css.map */

@@ -2,7 +2,7 @@ import React from 'react';
 import Image from '../Image/Image';
 import Icon from '../Icon/Icon';
 import logo from '../../assets/small-logo.svg'
-import add from '../../assets/icon-add.svg'
+import person from '../../assets/person.svg'
 
 const Header = () => (
   <header className="header">
@@ -15,7 +15,7 @@ const Header = () => (
         <li className="header__nav-list-item"><h2 className="header-3">Grants</h2></li>
         <li className="header__nav-list-item"><h2 className="header-3">Data</h2></li>
         <li className="header__nav-list-item header__account-icon">
-          <Icon type={add}/>
+          <p className="paragraph">Sarah Hamdi</p> <Icon type={person}/>
         </li>
       </ul>
     </nav>

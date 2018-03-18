@@ -25,4 +25,20 @@
       padding-top: 40px;
     }
   }
+  .header__account-icon {
+    @include flexbox (row wrap, space-between, center);
+    color: $charcoal;
+    &:hover {
+      border-top: 8px solid $charcoal;
+      padding-top: 32px;
+    }
+    .paragraph {
+      font-weight: $font-weight--bolder;
+      text-transform: uppercase;
+      font-size: 14px;
+      margin: 0;
+      align-self: center;
+      margin-right: 5px;
+    }
+  }
 }
