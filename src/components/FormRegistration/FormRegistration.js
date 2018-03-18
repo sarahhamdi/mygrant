@@ -7,19 +7,19 @@ const FormRegistration= ({ name, id }) => (
     <InputText 
       type="text"
       name="user-name" 
-      placeholder="Your Name" 
+      placeholder="Severus Snape" 
       label="Your Name" 
       id="registration--input-name"/>
     <InputText 
       type="text"
       name="user-org" 
-      placeholder="Your Organization's Name" 
+      placeholder="The Order of the Phoenix" 
       label="Your Organization's Name" 
       id="registration--input-org-name"/>
     <InputText 
       type="email"
       name="Your Email" 
-      placeholder="example@email.com" 
+      placeholder="ssnape@hogwarts.edu" 
       label="Your Email" 
       pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/"
       id="registration--input-nemail"/>
