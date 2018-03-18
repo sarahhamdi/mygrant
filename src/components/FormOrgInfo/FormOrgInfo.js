@@ -5,18 +5,18 @@ import Button from '../Button/Button'
 
 const FormOrgInfo = ({ name, id }) => (
   <form name={name} id={id} method="post" className="form--org-info">
-  <InputText 
-    name="newinput" 
-    placeholder=" " 
-    label="Title" 
-    id="newInputText"/>
-  <InputTextArea 
-    name="newtextarea" 
-    placeholder=" " 
-    label="Description" 
-    id="newInputText" />
-  <Button text="Add Org Details"/>
-</form>
+    <InputText 
+      name="title" 
+      placeholder=" " 
+      label="Title" 
+      id="newInputText"/>
+    <InputTextArea 
+      name="description" 
+      placeholder=" " 
+      label="Description" 
+      id="newInputText" />
+    <Button text="Add Org Details"/>
+  </form>
 )
 
 export default FormOrgInfo;
