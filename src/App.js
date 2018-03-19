@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import axios from 'axios';
 import { 
   BrowserRouter as Router, 
@@ -11,7 +11,7 @@ import PageLogin from './PageLogin'
 import PageData from './PageData'
 import PageAccount from './PageAccount'
 
-class App extends Component {
+class App extends React.Component {
   // this is the optimal place to 
   // make an http request
   componentDidMount() { 

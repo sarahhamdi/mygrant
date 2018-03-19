@@ -4,20 +4,17 @@ import InputTextArea from '../InputTextArea/InputTextArea'
 import Button from '../Button/Button'
 
 class FormGrant extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      grantName: '',
-      grantIssuer: '',
-      grantAmount: '',
-      grantDue: '',
-      grantLink: '',
-      grantTags: '',
-      grantAmountGranted: '',
-      grantNotes: ''
-    }
+  state = {
+    grantName: '',
+    grantIssuer: '',
+    grantAmount: '',
+    grantDue: '',
+    grantLink: '',
+    grantTags: '',
+    grantAmountGranted: '',
+    grantNotes: ''
   }
-
+  
   handleChange = e => {
     this.setState({
       [e.target.name]: e.target.value
