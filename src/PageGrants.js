@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import addLight from './assets/icon-add-light.svg';
 import Header from './components/Header/Header';

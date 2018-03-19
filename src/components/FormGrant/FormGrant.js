@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import InputText from '../InputText/InputText'
 import InputTextArea from '../InputTextArea/InputTextArea'
 import Button from '../Button/Button'

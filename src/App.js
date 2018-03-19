@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { 
   BrowserRouter as Router, 
-  Route, Link } from 'react-router-dom';
-
-import Header from './components/Header/Header';
+  Route } from 'react-router-dom';
 
 import PageGrants from './PageGrants'
 import PageOrgDetails from './PageOrgDetails'
