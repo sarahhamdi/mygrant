@@ -19,7 +19,7 @@ const FormLogin= ({ name, id }) => (
       id="registration--input-password"
       required="true" />
     <Button text="Login"/>
-    <p className="paragraph paragraph--right"><a href="/registration">Not registered? Register here.</a></p>
+    <p className="paragraph paragraph--right"><a href="/register">Not registered? Register here.</a></p>
   </form>
 )
 
