@@ -5,14 +5,15 @@ import Button from '../Button/Button'
 
 class FormGrant extends React.Component {
   state = {
-    grantName: '',
-    grantIssuer: '',
-    grantAmount: '',
-    grantDue: '',
+    name: '',
+    issuer: '',
+    amount: Number,
+    due: '',
     grantLink: '',
-    grantTags: '',
-    grantAmountGranted: '',
-    grantNotes: ''
+    tags: '',
+    status: Number,
+    granted: Number,
+    notes: ''
   }
   
   handleChange = e => {
@@ -26,25 +27,25 @@ class FormGrant extends React.Component {
     return (
       <form name={name} id={id} method="post" className="form--grant">
       <InputText 
-        name="grantName" 
+        name="name" 
         placeholder=" " 
         label="Grant Name" 
         id="grant-name" 
         handleChange={this.handleChange}/>
       <InputText 
-        name="grantIssuer" 
+        name="issuer" 
         placeholder=" " 
         label="Grant Issuer" 
         id="grant-issuer" 
         handleChange={this.handleChange} />
       <InputText 
-        name="grantAmount" 
+        name="amount" 
         placeholder=" " 
         label="Grant Amount" 
         id="grant-amount"
         handleChange={this.handleChange} />
       <InputText 
-        name="grantDue" 
+        name="due" 
         placeholder=" " 
         label="Due Date" 
         id="grant-due"
@@ -56,19 +57,19 @@ class FormGrant extends React.Component {
         id="grant-link"
         handleChange={this.handleChange} />
       <InputText 
-        name="grantTags" 
+        name="tags" 
         placeholder=" " 
         label="Tags" 
         id="grant-tags"
         handleChange={this.handleChange} />
       <InputText 
-        name="grantAmountGranted" 
+        name="granted" 
         placeholder=" " 
         label="Amount Granted" 
         id="grant-amount-granted"
         handleChange={this.handleChange} />
       <InputTextArea
-        name="grantNotes" 
+        name="notes" 
         placeholder=" " 
         label="Notes" 
         id="grant-notes" 
