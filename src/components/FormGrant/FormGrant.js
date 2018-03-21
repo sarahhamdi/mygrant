@@ -2,7 +2,7 @@ import React from 'react';
 import InputText from '../InputText/InputText'
 import InputTextArea from '../InputTextArea/InputTextArea'
 import Button from '../Button/Button'
-import axios from "axios";
+import axios from "axios"
 
 class FormGrant extends React.Component {
   state = {
@@ -26,13 +26,13 @@ class FormGrant extends React.Component {
   postNewGrant = () => {
     const { name, issuer, amount, due, grantLink, tags, status, granted, notes } = this.state;
     axios
-    .post('/grants', { name, issuer, amount, due, grantLink, tags, status, granted, notes })
-    .then(res => {
-      console.log(res);
-    })
-    .catch(err => {
-      console.log(err);
-    })
+      .post('/grants', { name, issuer, amount, due, grantLink, tags, status, granted, notes })
+      .then(res => {
+        console.log(res)
+      })
+      .catch(err => {
+        console.log(err)
+      })
   }
 
   render() {

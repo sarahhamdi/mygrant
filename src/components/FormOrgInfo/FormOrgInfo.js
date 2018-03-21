@@ -2,11 +2,12 @@ import React from 'react';
 import InputText from '../InputText/InputText'
 import InputTextArea from '../InputTextArea/InputTextArea'
 import Button from '../Button/Button'
+import axios from "axios"
 
 class FormOrgInfo extends React.Component {
   state = { 
     title: '',
-    description: '',
+    text: '',
   }
 
   handleChange = e => {
@@ -15,10 +16,22 @@ class FormOrgInfo extends React.Component {
     });
   };
 
+  postNewOrgDetail = () => {
+    const { title, text } = this.state;
+    axios
+      .post('/org-details', { title, text })
+      .then(res => {
+        console.log(res)
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }
+
   render() {
     const { name, id } = this.props;
     return (
-      <form name={name} id={id} method="post" className="form--org-info">
+      <form name={name} id={id} onSubmit={this.postNewOrgDetail} className="form--org-info">
         <InputText 
           name="title" 
           placeholder=" "  
@@ -26,9 +39,9 @@ class FormOrgInfo extends React.Component {
           id="newInputText"
           handleChange={this.handleChange} />
         <InputTextArea 
-          name="description" 
+          name="text" 
           placeholder=" " 
-          label="Description" 
+          label="text" 
           id="newInputText"
           handleChange={this.handleChange} />
         <Button text="Add Org Details"/>

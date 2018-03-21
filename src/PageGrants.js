@@ -51,7 +51,6 @@ class PageGrants extends React.Component {
     this.refresh();
   }
 
-
   render() {
     return (
       <main className="page__grants">
