@@ -34,10 +34,17 @@ class PageGrants extends React.Component {
 
   showForm = e => {
     e.preventDefault();
-
     this.setState({
       visible: true
     })
+  }
+
+  hideForm = e => {
+    e.preventDefault();
+    this.setState({
+      visible: false
+    }) 
+    this.refresh();
   }
     
   componentDidMount() { 
@@ -52,10 +59,9 @@ class PageGrants extends React.Component {
       <ButtonWithIcon type={addLight} text="Add a Grant" action={this.showForm} />
 
       {this.state.visible ?
-        <FormGrant name="form-grants" id="form-grants" />
+        <FormGrant name="form-grants" id="form-grants" action={this.hideForm}/>
         : null}
       
-
       {this.state.grants.map(grant => (
         <div key={grant._id}>
           {grant.name}
