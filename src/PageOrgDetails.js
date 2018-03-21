@@ -1,20 +1,66 @@
 import React from 'react';
+import axios from 'axios';
 
 import addLight from './assets/icon-add-light.svg';
 import Header from './components/Header/Header';
 import ButtonWithIcon from './components/ButtonWithIcon/ButtonWithIcon';
-import FormOrgInfo from './components/FormOrgInfo/FormOrgInfo';
+import FormOrgDetails from './components/FormOrgDetails/FormOrgDetails';
 
-const PageOrgDetails = () => (
-  <main className="page__org-details">
-    <Header />
-    <ButtonWithIcon type={addLight} text="Add a Field" />
-    <FormOrgInfo name="form-org-info" id="form-org-info" />
-    <h3 className="header-3">Organization Name</h3>
-    <p className="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <h3 className="header-3">Organization Description</h3>
-    <p className="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-  </main>
-);
+class PageOrgDetails extends React.Component {
+  state = {
+    details: [],
+    visible: false
+  }
+
+  refresh = () => {
+    axios
+    .get('/org-details')
+    .then(res => {
+      console.log(res.data.payload)
+      const details = res.data.payload;
+      this.setState({
+        details
+      })
+    });
+  }
+
+  showForm = e => {
+    e.preventDefault();
+    this.setState({
+      visible: true
+    })
+  }
+
+  hideForm = () => (
+    this.setState({
+      visible: false
+    })
+  )
+  
+  componentDidMount() {
+    this.refresh();
+  }
+
+  render() {
+    return(
+      <main className="page__org-details">
+        <Header />
+        <ButtonWithIcon type={addLight} text="Add a Field" action={this.showForm}/>
+
+        {this.state.visible ?
+          <FormOrgDetails name="form-org-info" id="form-org-info" />
+          : null }
+
+        {this.state.details.map(detail => (
+          <div key={detail._id}>
+            <h3>{detail.title}</h3>
+            <p>{detail.text}</p>
+          </div>
+        ))}
+      </main>
+
+    )
+  }
+}
 
 export default PageOrgDetails;
