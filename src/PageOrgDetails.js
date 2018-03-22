@@ -1,4 +1,7 @@
 import React from 'react';
+import { 
+  BrowserRouter as Router, 
+  Route } from 'react-router-dom';
 import axios from 'axios';
 
 import addLight from './assets/icon-add-light.svg';
@@ -10,6 +13,7 @@ import OrgDetail from './components/OrgDetail/OrgDetail';
 class PageOrgDetails extends React.Component {
   state = {
     details: [],
+    id: false,
     visible: false
   }
 
@@ -53,12 +57,24 @@ class PageOrgDetails extends React.Component {
           {this.state.visible ?
             <FormOrgDetails name="form-org-info" id="form-org-info" />
             : null }
-
+            
+       
+          <ul className="org-details__index">
+          {this.state.details.map(detail => (
+            <li key={detail._id}><a href={`#${detail.title}`}>{detail.title}</a></li>))}
+          </ul>
+          
           {this.state.details.map(detail => (
             <OrgDetail 
               key={detail._id} 
               title={detail.title}
-              text={detail.text} />))}
+              text={detail.text} />
+            
+            ))}
+
+        
+          
+
         </section>
 
       </main>
@@ -68,3 +84,4 @@ class PageOrgDetails extends React.Component {
 }
 
 export default PageOrgDetails;
+

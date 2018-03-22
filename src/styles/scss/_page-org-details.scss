@@ -9,4 +9,10 @@
   .org-detail {
     grid-column: 5 / -1;
   }
+  .org-details__index {
+    text-align: right;
+    grid-column: 2 / span 2;
+    font-size: 14px;
+    list-style: none;
+  }
 }

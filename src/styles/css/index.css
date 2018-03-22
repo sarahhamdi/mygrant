@@ -341,6 +341,11 @@ button {
     margin-top: 20px; }
   .page__org-details__container .org-detail {
     grid-column: 5 / -1; }
+  .page__org-details__container .org-details__index {
+    text-align: right;
+    grid-column: 2 / span 2;
+    font-size: 14px;
+    list-style: none; }
 
 html {
   font-size: 62.5%; }
