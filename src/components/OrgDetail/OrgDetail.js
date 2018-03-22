@@ -49,6 +49,7 @@ class OrgDetail extends React.Component {
             key={id}
             name="text"
              />
+          <button className="org-detail__button" onClick={this.edit}>edit</button>
         </React.Fragment>
         :   <React.Fragment>
               <InputText 
@@ -69,10 +70,13 @@ class OrgDetail extends React.Component {
         <button className="org-detail__button" onClick={() => action(id)}>delete</button>
         
         <CopyToClipboard text={text}>
-            <button className="org-detail__button">Copy Details</button>
+            <button className="org-detail__button">Copy To Clipboard</button>
         </CopyToClipboard>
 
-        <button className="org-detail__button" onClick={this.edit}>edit</button>
+
+        
+
+        <button className="org-detail__button" onClick={this.save}>save</button>
       </div>
     )
   }

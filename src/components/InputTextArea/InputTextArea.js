@@ -1,12 +1,17 @@
 import React from 'react';
 
+const adjustHeight = (element) => {
+  element.style.height = "1px";
+  element.style.height = (25 + element.scrollHeight) + "px";
+}
+
 const InputTextArea = ({ extraClass, id, label, name, placeholder, required, length, readOnly, handleChange, value, defaultValue, disabled }) => (
   <div className={`textarea ${extraClass}`}>
     {label ? 
       <label className={`textarea__label`} htmlFor={id}><h3 className="header-3">{label}</h3></label>
       : null}
     
-    <textarea 
+    <textarea
       className={`textarea__input`} 
       id={id} 
       name={name} 
@@ -23,3 +28,4 @@ const InputTextArea = ({ extraClass, id, label, name, placeholder, required, len
 ) 
 
 export default InputTextArea;
+
