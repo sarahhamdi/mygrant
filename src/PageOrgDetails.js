@@ -66,18 +66,21 @@ class PageOrgDetails extends React.Component {
         <section className="page__org-details__container">
           <ButtonWithIcon type={addLight} text="Add a Field" action={this.showForm}/>
 
+          {/* show form */}
           {this.state.visible ?
             <FormOrgDetails name="form-org-info" id="form-org-info" />
             : null }
-            
+          
+          {/* create index */}
           <ul className="org-details__index">
-            <li><a className="org-details__index__link" onClick={this.showAllDetails} >View All</a></li>
+            <li className="org-details__index__item"><a className="org-details__index__link--1" onClick={this.showAllDetails}>View All</a></li>
             {this.state.details.map(detail => (
-              <li key={detail._id}>
+              <li key={detail._id} className="org-details__index__item">
                 <a className="org-details__index__link" onClick={() => this.showDetail(detail._id)}>{detail.title}</a>
               </li>))}
           </ul>
           
+          {/* display details */}
           {this.state.id === 0 ?
             this.state.details.map(detail => (
               <OrgDetail 
@@ -92,11 +95,7 @@ class PageOrgDetails extends React.Component {
                     key={detail._id} 
                     title={detail.title}
                     text={detail.text} />
-                  ))
-          }
-
-        
-          
+                  ))}          
 
         </section>
 

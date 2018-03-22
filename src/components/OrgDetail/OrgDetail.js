@@ -1,9 +1,11 @@
 import React from 'react';
+import H3 from '../H3/H3'
+import Paragraph from '../Paragraph/Paragraph'
 
 const OrgDetail = ({ title, text }) => (
   <div className="org-detail">
-    <h3 className="header-3 org-detail__title">{title}</h3>
-    <p className="paragraph org-detail__text">{text}</p>
+    <H3 extraClass="org-detail__title" text={title} />
+    <Paragraph extraClass="org-detail__text" text={title} />
   </div>
 )
 
