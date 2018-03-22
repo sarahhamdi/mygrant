@@ -246,7 +246,7 @@ button {
     padding: 0;
     margin: 0 auto;
     list-style: none;
-    max-width: 1200px; }
+    max-width: 960px; }
   .header__nav-list-item {
     padding: 40px 30px 16px 30px;
     margin: 0;
@@ -258,19 +258,25 @@ button {
       color: #f8f8f8; }
       .header__nav-list-item a:hover {
         color: white; }
-  .header .header__account-icon a {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    align-content: center;
-    color: #242424; }
-  .header .header__account-icon .paragraph {
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 14px;
-    margin: 0;
-    align-self: center;
-    margin-right: 5px; }
+  .header .header__logo {
+    padding: 40px 30px 16px 0;
+    margin: 0; }
+  .header .header__account-icon {
+    padding: 40px 0 16px 30px;
+    margin: 0; }
+    .header .header__account-icon a {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      align-content: center;
+      color: #242424; }
+    .header .header__account-icon .paragraph {
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 14px;
+      margin: 0;
+      align-self: center;
+      margin-right: 5px; }
 
 .inputtext__input {
   padding: 12px 4px;
@@ -348,14 +354,15 @@ button {
   grid-template-rows: auto;
   grid-gap: 20px;
   padding: 0;
-  margin: 0 30px; }
+  margin: 0 auto;
+  max-width: 960px; }
   .page__org-details__container .button {
     display: flex;
     flex-flow: row-wrap;
     justify-content: center;
     align-content: center;
     padding: auto;
-    margin: 30px 20px 50px;
+    margin: 30px 0 50px 20px;
     grid-column: 9 / span 4; }
   .page__org-details__container .org-detail {
     grid-column: 5 / -1; }

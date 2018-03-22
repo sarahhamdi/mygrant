@@ -1,9 +1,12 @@
 import React from 'react';
 
-const adjustHeight = (element) => {
-  element.style.height = "1px";
-  element.style.height = (25 + element.scrollHeight) + "px";
-}
+// trying to make height of textarea match contents
+// perhaps try this later? https://jsbin.com/qizepev/edit?html,css,js,output
+
+// const adjustHeight = (element) => {
+//   element.style.height = "1px";
+//   element.style.height = (25 + element.scrollHeight) + "px";
+// }
 
 const InputTextArea = ({ extraClass, id, label, name, placeholder, required, length, readOnly, handleChange, value, defaultValue, disabled }) => (
   <div className={`textarea ${extraClass}`}>

@@ -1,10 +1,11 @@
 .header {
   background: $salmon;
   &__nav-list {
+    
     @include flexbox (row wrap, space-between, flex-end);
     @include padding-margin (0, 0 auto);
     list-style: none;
-    max-width: 1200px;
+    max-width: 960px;
   }
   &__nav-list-item { 
     @include padding-margin (40px 30px 16px 30px, 0);
@@ -20,7 +21,11 @@
       }
     }
   }
+  .header__logo {
+    @include padding-margin (40px 30px 16px 0, 0);
+  }
   .header__account-icon {
+    @include padding-margin (40px 0 16px 30px, 0);
     a {
       @include flexbox (row wrap, space-between, center);
       color: $charcoal;
