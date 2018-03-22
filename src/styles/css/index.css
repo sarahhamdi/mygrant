@@ -326,6 +326,22 @@ button {
   .page__registration #form-registration {
     width: 400px; }
 
+.page__org-details__container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto;
+  grid-gap: 20px;
+  margin: 0 30px; }
+  .page__org-details__container .button {
+    display: flex;
+    flex-flow: row-wrap;
+    justify-content: center;
+    align-content: center;
+    grid-column: 10 / span 3;
+    margin-top: 20px; }
+  .page__org-details__container .org-detail {
+    grid-column: 5 / -1; }
+
 html {
   font-size: 62.5%; }
 

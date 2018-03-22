@@ -46,18 +46,21 @@ class PageOrgDetails extends React.Component {
     return(
       <main className="page__org-details">
         <Header />
-        <ButtonWithIcon type={addLight} text="Add a Field" action={this.showForm}/>
 
-        {this.state.visible ?
-          <FormOrgDetails name="form-org-info" id="form-org-info" />
-          : null }
+        <section className="page__org-details__container">
+          <ButtonWithIcon type={addLight} text="Add a Field" action={this.showForm}/>
 
-        {this.state.details.map(detail => (
-          <OrgDetail 
-            key={detail._id} 
-            title={detail.title}
-            text={detail.text} />
-        ))}
+          {this.state.visible ?
+            <FormOrgDetails name="form-org-info" id="form-org-info" />
+            : null }
+
+          {this.state.details.map(detail => (
+            <OrgDetail 
+              key={detail._id} 
+              title={detail.title}
+              text={detail.text} />))}
+        </section>
+
       </main>
 
     )

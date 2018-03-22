@@ -1,0 +1,12 @@
+.page__org-details__container {
+  @include grid(repeat(12, 1fr), auto, 20px);
+  margin: 0 30px;
+  .button {
+    @include flexbox(row-wrap, center, center);
+    grid-column: 10 / span 3;
+    margin-top: 20px;
+  }
+  .org-detail {
+    grid-column: 5 / -1;
+  }
+}
