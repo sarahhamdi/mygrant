@@ -1,3 +1,20 @@
 .org-detail__title {
   margin-top: 0;
+
+}
+
+.org-detail {
+  margin-bottom: 50px;
+}
+
+.org-detail__button {
+  height: 30px;
+  margin-right: 10px;
+  font-size: 12px;
+  padding: 5px 10px;
+  background: $charcoal;
+  border: none;
+  &:hover {
+    background: $aluminium;
+  }
 }

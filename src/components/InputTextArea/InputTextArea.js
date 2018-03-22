@@ -1,6 +1,6 @@
 import React from 'react';
 
-const InputTextArea = ({ extraClass, id, label, name, placeholder, required, disabled, length, readonly, handleChange }) => (
+const InputTextArea = ({ extraClass, id, label, name, placeholder, required, disabled, length, readonly, handleChange, value }) => (
   <div className={`textarea ${extraClass}`}>
     <label className={`textarea__label`} htmlFor={id}><h3 className="header-3">{label}</h3></label>
     
@@ -12,6 +12,7 @@ const InputTextArea = ({ extraClass, id, label, name, placeholder, required, dis
       maxLength={length} 
       spellCheck="true" 
       onChange={handleChange}
+      value={value}
       {...disabled ? disabled : null}
       {...required ? required : null}
       {...readonly ? readonly : null}/>

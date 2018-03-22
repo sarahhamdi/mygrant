@@ -317,6 +317,19 @@ button {
 .org-detail__title {
   margin-top: 0; }
 
+.org-detail {
+  margin-bottom: 50px; }
+
+.org-detail__button {
+  height: 30px;
+  margin-right: 10px;
+  font-size: 12px;
+  padding: 5px 10px;
+  background: #242424;
+  border: none; }
+  .org-detail__button:hover {
+    background: #9b9b9b; }
+
 .page__login {
   width: 960px;
   margin: 75px auto; }
@@ -342,8 +355,8 @@ button {
     justify-content: center;
     align-content: center;
     padding: auto;
-    margin: 30px 0 50px;
-    grid-column: 10 / span 3; }
+    margin: 30px 20px 50px;
+    grid-column: 9 / span 4; }
   .page__org-details__container .org-detail {
     grid-column: 5 / -1; }
   .page__org-details__container .org-details__index {

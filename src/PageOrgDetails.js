@@ -29,6 +29,15 @@ class PageOrgDetails extends React.Component {
     });
   }
 
+  deleteDetail = id => {
+    axios
+    .delete(`/org-details/${id}`)
+    .then(res => {
+      console.log(res.data.payload)
+      this.refresh();
+    });
+  }
+
   showForm = e => {
     e.preventDefault();
     this.setState({
@@ -84,17 +93,21 @@ class PageOrgDetails extends React.Component {
           {this.state.id === 0 ?
             this.state.details.map(detail => (
               <OrgDetail 
+                id={detail._id} 
                 key={detail._id} 
                 title={detail.title}
-                text={detail.text} />
+                text={detail.text}
+                action={this.deleteDetail} />
               ))
             : this.state.details
                 .filter(detail => detail._id === this.state.id)
                 .map(detail => (
                   <OrgDetail 
+                    id={detail._id} 
                     key={detail._id} 
                     title={detail.title}
-                    text={detail.text} />
+                    text={detail.text}
+                    action={this.deleteDetail} />
                   ))}          
 
         </section>
