@@ -314,6 +314,9 @@ button {
 .form--login .button {
   width: 100%; }
 
+.org-detail__title {
+  margin-top: 0; }
+
 .page__login {
   width: 960px;
   margin: 75px auto; }
@@ -338,14 +341,31 @@ button {
     justify-content: center;
     align-content: center;
     grid-column: 10 / span 3;
-    margin-top: 20px; }
+    margin: 30px 0 50px; }
   .page__org-details__container .org-detail {
     grid-column: 5 / -1; }
   .page__org-details__container .org-details__index {
     text-align: right;
-    grid-column: 2 / span 2;
+    grid-column: 1 / span 4;
+    grid-row: span 10;
     font-size: 14px;
-    list-style: none; }
+    list-style: none;
+    margin: 0 40px 0 0;
+    padding: 0; }
+    .page__org-details__container .org-details__index li {
+      margin-bottom: 12px; }
+    .page__org-details__container .org-details__index__link {
+      cursor: pointer; }
+  .page__org-details__container .form--org-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: #fffffff2;
+    padding: 100px 200px; }
 
 html {
   font-size: 62.5%; }

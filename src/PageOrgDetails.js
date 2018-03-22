@@ -13,7 +13,7 @@ import OrgDetail from './components/OrgDetail/OrgDetail';
 class PageOrgDetails extends React.Component {
   state = {
     details: [],
-    id: false,
+    id: 0,
     visible: false
   }
 
@@ -42,6 +42,18 @@ class PageOrgDetails extends React.Component {
     })
   )
   
+  showDetail = (id) => {
+    this.setState({
+      id
+    })
+  }
+
+  showAllDetails = () => {
+    this.setState({
+      id: 0
+    })
+  }
+
   componentDidMount() {
     this.refresh();
   }
@@ -58,19 +70,30 @@ class PageOrgDetails extends React.Component {
             <FormOrgDetails name="form-org-info" id="form-org-info" />
             : null }
             
-       
           <ul className="org-details__index">
-          {this.state.details.map(detail => (
-            <li key={detail._id}><a href={`#${detail.title}`}>{detail.title}</a></li>))}
+            <li><a className="org-details__index__link" onClick={this.showAllDetails} >View All</a></li>
+            {this.state.details.map(detail => (
+              <li key={detail._id}>
+                <a className="org-details__index__link" onClick={() => this.showDetail(detail._id)}>{detail.title}</a>
+              </li>))}
           </ul>
           
-          {this.state.details.map(detail => (
-            <OrgDetail 
-              key={detail._id} 
-              title={detail.title}
-              text={detail.text} />
-            
-            ))}
+          {this.state.id === 0 ?
+            this.state.details.map(detail => (
+              <OrgDetail 
+                key={detail._id} 
+                title={detail.title}
+                text={detail.text} />
+              ))
+            : this.state.details
+                .filter(detail => detail._id === this.state.id)
+                .map(detail => (
+                  <OrgDetail 
+                    key={detail._id} 
+                    title={detail.title}
+                    text={detail.text} />
+                  ))
+          }
 
         
           
@@ -85,3 +108,19 @@ class PageOrgDetails extends React.Component {
 
 export default PageOrgDetails;
 
+
+
+// this.state.details.map(detail => (
+//   <OrgDetail 
+//     key={detail._id} 
+//     title={detail.title}
+//     text={detail.text} />
+//   ))
+// : this.state.details
+//     .filter(detail => detail._id === this.setState.id)
+//     .map(detail => (
+//       <OrgDetail 
+//         key={detail._id} 
+//         title={detail.title}
+//         text={detail.text} />
+//       ))
