@@ -5,6 +5,7 @@ import addLight from './assets/icon-add-light.svg';
 import Header from './components/Header/Header';
 import ButtonWithIcon from './components/ButtonWithIcon/ButtonWithIcon';
 import FormOrgDetails from './components/FormOrgDetails/FormOrgDetails';
+import OrgDetail from './components/OrgDetail/OrgDetail';
 
 class PageOrgDetails extends React.Component {
   state = {
@@ -52,10 +53,10 @@ class PageOrgDetails extends React.Component {
           : null }
 
         {this.state.details.map(detail => (
-          <div key={detail._id}>
-            <h3>{detail.title}</h3>
-            <p>{detail.text}</p>
-          </div>
+          <OrgDetail 
+            key={detail._id} 
+            title={detail.title}
+            text={detail.text} />
         ))}
       </main>
 
