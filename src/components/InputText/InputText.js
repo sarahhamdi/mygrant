@@ -1,10 +1,11 @@
 import React from 'react';
 
-const InputText = ({ extraClass, id, label, type, name, placeholder, required, pattern, handleChange, value }) => (
+const InputText = ({ extraClass, id, label, type, name, placeholder, required, pattern, handleChange, value, disabled, readOnly }) => (
   <div className={`inputtext ${extraClass}`}>
-    <label className={`header-3 inputtext__label`} htmlFor={id}>{label}</label>
+  {label ? 
+    <label className={`inputtext__label`} htmlFor={id}><h3 className="header-3">{label}</h3></label>
+    : null}
 
-    {required ? 
       <input 
         className={`inputtext__input`} 
         type={type} 
@@ -15,17 +16,10 @@ const InputText = ({ extraClass, id, label, type, name, placeholder, required, p
         required
         onChange={handleChange}
         value={value}
+        required={required}
+        disabled={disabled}
+        readOnly={readOnly}
         />
-      : <input 
-          className={`inputtext__input`} 
-          type={type} 
-          id={id} 
-          name={name} 
-          placeholder={placeholder} 
-          pattern={pattern}
-          onChange={handleChange}
-          value={value}
-          />}
 
     <span className="validity"></span>
   </div>
