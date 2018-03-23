@@ -14,7 +14,8 @@ class PageOrgDetails extends React.Component {
   state = {
     details: [],
     id: 0,
-    visible: false
+    visible: false,
+    updated: false
   }
 
   refresh = () => {
@@ -27,15 +28,16 @@ class PageOrgDetails extends React.Component {
         details
       })
     });
+    this.setState({
+      updated: false
+    })
   }
 
-  deleteDetail = id => {
-    axios
-    .delete(`/org-details/${id}`)
-    .then(res => {
-      console.log(res.data.payload)
-      this.refresh();
-    });
+  update = () => {
+    this.setState({
+      updated: true
+    })
+    this.refresh();
   }
 
   showForm = e => {
@@ -97,7 +99,7 @@ class PageOrgDetails extends React.Component {
                 key={detail._id} 
                 title={detail.title}
                 text={detail.text}
-                action={this.deleteDetail} />
+                action={this.update} />
               ))
             : this.state.details
                 .filter(detail => detail._id === this.state.id)
@@ -107,7 +109,7 @@ class PageOrgDetails extends React.Component {
                     key={detail._id} 
                     title={detail.title}
                     text={detail.text}
-                    action={this.deleteDetail} />
+                    action={this.update} />
                   ))}          
 
         </section>

@@ -142,7 +142,7 @@ body {
   color: #242424; }
 
 h1, h2, h3, h4,
-.header-1, .header-2, .header-3, .header-4 {
+.header-1, .header-2, .header-3, .header-4, .org-detail .inputtext__input {
   padding: 0;
   margin: 1.4rem 0 0.5rem 0;
   font-family: "Open Sans", sans-serif;
@@ -171,7 +171,8 @@ h3,
   font-size: 2rem; }
 
 h4,
-.header-4 {
+.header-4,
+.org-detail .inputtext__input {
   font-size: 16px;
   font-size: 1.6rem;
   text-transform: uppercase;
@@ -320,21 +321,43 @@ button {
 .form--login .button {
   width: 100%; }
 
-.org-detail__title {
-  margin-top: 0; }
-
 .org-detail {
-  margin-bottom: 50px; }
-
-.org-detail__button {
-  height: 30px;
-  margin-right: 10px;
-  font-size: 12px;
-  padding: 5px 10px;
-  background: #242424;
-  border: none; }
-  .org-detail__button:hover {
-    background: #9b9b9b; }
+  margin-bottom: 40px; }
+  .org-detail__button-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    margin-bottom: 20px; }
+  .org-detail__title,
+  .org-detail .inputtext__input {
+    margin: 0; }
+  .org-detail .disabled .inputtext__input,
+  .org-detail .disabled .textarea__input {
+    border: 2px solid transparent; }
+    .org-detail .disabled .inputtext__input:hover, .org-detail .disabled .inputtext__input:focus,
+    .org-detail .disabled .textarea__input:hover,
+    .org-detail .disabled .textarea__input:focus {
+      background: none;
+      outline: 2px solid transparent;
+      border: 2px solid transparent; }
+  .org-detail .editable .inputtext__input,
+  .org-detail .editable .textarea__input {
+    background: #fff9f8;
+    outline: 2px solid #fff5f4;
+    border: 2px solid #fff9f8; }
+  .org-detail .inputtext__input {
+    font-weight: 700; }
+  .org-detail .textarea__input {
+    margin: 10px 0; }
+  .org-detail__button {
+    height: 30px;
+    margin-right: 10px;
+    font-size: 12px;
+    padding: 5px 10px;
+    background: #242424;
+    border: none; }
+    .org-detail__button:hover {
+      background: #9b9b9b; }
 
 .page__login {
   width: 960px;

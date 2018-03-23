@@ -1,20 +1,47 @@
-.org-detail__title {
-  margin-top: 0;
-
-}
-
 .org-detail {
-  margin-bottom: 50px;
-}
-
-.org-detail__button {
-  height: 30px;
-  margin-right: 10px;
-  font-size: 12px;
-  padding: 5px 10px;
-  background: $charcoal;
-  border: none;
-  &:hover {
-    background: $aluminium;
+  margin-bottom: 40px;
+  &__button-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+  }
+  &__title,
+  .inputtext__input {
+    margin: 0
+  }
+  .disabled .inputtext__input,
+  .disabled .textarea__input {
+    border: 2px solid transparent;
+    &:hover,
+    &:focus {
+      background: none;
+      outline: 2px solid transparent;
+      border: 2px solid transparent;
+    }
+  }
+  .editable .inputtext__input,
+  .editable .textarea__input {
+    background: #fff9f8;
+    outline: 2px solid #fff5f4;
+    border: 2px solid #fff9f8;
+  }
+  .inputtext__input {
+    @extend .header-4;
+    font-weight: 700;
+  }
+  .textarea__input {
+    margin: 10px 0;
+  }
+  &__button {
+    height: 30px;
+    margin-right: 10px;
+    font-size: 12px;
+    padding: 5px 10px;
+    background: $charcoal;
+    border: none;
+    &:hover {
+      background: $aluminium;
+    }
   }
 }

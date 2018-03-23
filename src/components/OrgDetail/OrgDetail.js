@@ -1,17 +1,19 @@
 import React from 'react';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
+import axios from "axios"
+
 import H3 from '../H3/H3';
 import Paragraph from '../Paragraph/Paragraph';
 import Button from '../Button/Button';
 import InputText from '../InputText/InputText';
-import InputTextArea from '../InputTextArea/InputTextArea'
-
-import { CopyToClipboard } from 'react-copy-to-clipboard';
+import InputTextArea from '../InputTextArea/InputTextArea';
 
 class OrgDetail extends React.Component {
   state = {
     disabled: true,
     title: this.props.title,
     text: this.props.text,
+    id: this.props.id
   }
 
   handleChange = e => {
@@ -26,16 +28,64 @@ class OrgDetail extends React.Component {
     })
   }
 
-  save = () => {
+  cancel = () => {
     this.setState({
       disabled: true
     })
   }
 
+  save = () => {
+    const { title, text, id } = this.state;
+    this.setState({
+      disabled: true
+    })
+    axios
+      .patch('/org-details', { title, text, id })
+      .then(res => {
+        console.log(res)
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }
+
+  delete = () => {
+    const { id } = this.state;
+    axios
+    .delete(`/org-details/${id}`)
+    .then(res => {
+      console.log(res.data.payload)
+      this.props.action();
+    });
+  }
+
   render() {
-    const { id, title, text, action } = this.props;
+    const { id, title, text } = this.props;
     return (
       <div className="org-detail">
+
+      <div classname="org-detail__button-container">
+        <button 
+            className="org-detail__button" 
+            onClick={this.delete}>delete</button>
+          <CopyToClipboard text={text}>
+              <button className="org-detail__button">Copy To Clipboard</button>
+          </CopyToClipboard>
+
+          {this.state.disabled ? 
+            <button 
+            className="org-detail__button" 
+            onClick={this.edit}>edit</button>
+            : <React.Fragment>
+                <button 
+                  className="org-detail__button" 
+                  onClick={this.cancel}>cancel</button>
+                <button 
+                  className="org-detail__button" 
+                  onClick={this.save}>save</button>
+              </React.Fragment>}
+      </div>
+
       {this.state.disabled ?
         <React.Fragment>
           <InputText 
@@ -49,7 +99,6 @@ class OrgDetail extends React.Component {
             key={id}
             name="text"
              />
-          <button className="org-detail__button" onClick={this.edit}>edit</button>
         </React.Fragment>
         :   <React.Fragment>
               <InputText 
@@ -64,19 +113,14 @@ class OrgDetail extends React.Component {
                 key={id} 
                 name="text"
                 handleChange={this.handleChange} />
+
             </React.Fragment>
         }
 
-        <button className="org-detail__button" onClick={() => action(id)}>delete</button>
         
-        <CopyToClipboard text={text}>
-            <button className="org-detail__button">Copy To Clipboard</button>
-        </CopyToClipboard>
-
-
+        
         
 
-        <button className="org-detail__button" onClick={this.save}>save</button>
       </div>
     )
   }
