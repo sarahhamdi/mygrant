@@ -29,7 +29,7 @@ class FormOrgInfo extends React.Component {
   }
 
   render() {
-    const { name, id, action } = this.props;
+    const { name, id } = this.props;
     return (
       <form name={name} id={id} onSubmit={this.postNewOrgDetail} className="form--org-info">
         <InputText 

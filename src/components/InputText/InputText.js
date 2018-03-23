@@ -13,7 +13,6 @@ const InputText = ({ extraClass, id, label, type, name, placeholder, required, p
         name={name} 
         placeholder={placeholder} 
         pattern={pattern}
-        required
         onChange={handleChange}
         value={value}
         required={required}

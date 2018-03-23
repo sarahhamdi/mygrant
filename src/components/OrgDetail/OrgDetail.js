@@ -2,9 +2,6 @@ import React from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import axios from "axios"
 
-import H3 from '../H3/H3';
-import Paragraph from '../Paragraph/Paragraph';
-import Button from '../Button/Button';
 import InputText from '../InputText/InputText';
 import InputTextArea from '../InputTextArea/InputTextArea';
 
@@ -32,6 +29,7 @@ class OrgDetail extends React.Component {
     this.setState({
       disabled: true
     })
+    this.props.action();
   }
 
   save = () => {
@@ -60,11 +58,11 @@ class OrgDetail extends React.Component {
   }
 
   render() {
-    const { id, title, text } = this.props;
+    const { text } = this.props;
     return (
       <div className="org-detail">
 
-      <div classname="org-detail__button-container">
+      <div className="org-detail__button-container">
         <button 
             className="org-detail__button" 
             onClick={this.delete}>delete</button>
@@ -74,7 +72,7 @@ class OrgDetail extends React.Component {
 
           {this.state.disabled ? 
             <button 
-            className="org-detail__button" 
+            className="org-detail__button"
             onClick={this.edit}>edit</button>
             : <React.Fragment>
                 <button 
@@ -91,36 +89,28 @@ class OrgDetail extends React.Component {
           <InputText 
             extraClass="org-detail__title disabled" 
             value={this.state.title}
-            key={id} 
-            name="title"  />
+            name="title" 
+            readOnly />
           <InputTextArea 
             extraClass="org-detail__text disabled" 
             value={this.state.text}
-            key={id}
             name="text"
+            readOnly
              />
         </React.Fragment>
         :   <React.Fragment>
               <InputText 
                 extraClass="org-detail__title editable" 
                 value={this.state.title}
-                key={id} 
                 name="title"
                 handleChange={this.handleChange} />
               <InputTextArea 
                 extraClass="org-detail__text editable" 
                 value={this.state.text}
-                key={id} 
                 name="text"
                 handleChange={this.handleChange} />
-
             </React.Fragment>
         }
-
-        
-        
-        
-
       </div>
     )
   }

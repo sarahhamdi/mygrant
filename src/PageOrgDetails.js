@@ -1,7 +1,4 @@
 import React from 'react';
-import { 
-  BrowserRouter as Router, 
-  Route } from 'react-router-dom';
 import axios from 'axios';
 
 import addLight from './assets/icon-add-light.svg';
