@@ -55,24 +55,29 @@ class PageGrants extends React.Component {
     return (
       <main className="page__grants">
       <Header />
-      <ButtonWithIcon type={addLight} text="Add a Grant" action={this.showForm} />
 
-      {this.state.visible ?
-        <FormGrant name="form-grants" id="form-grants" action={this.hideForm}/>
-        : null}
-      
-      {this.state.grants.map(grant => (
-        <div key={grant._id}>
-          {grant.name}
-          {grant.amount}
-          {grant.grantLink}
-          {grant.granted}
-          {grant.due}
-          {grant.status}
-          {grant.tags.map(tag => (tag))}
-        </div>
-      ))}
+      <section className="page__grants__container">
+        
+        <ButtonWithIcon type={addLight} text="Add a Grant" action={this.showForm} />
 
+        {this.state.visible ?
+          <FormGrant name="form-grants" id="form-grants" action={this.hideForm}/>
+          : null}
+        
+        {this.state.grants.map(grant => (
+          <div key={grant._id} className="div">
+            <h4>{grant.name}</h4>
+            <p>{grant.issuer}</p>
+            {grant.amount}
+            
+            {grant.grantLink}
+            {grant.granted}
+            {grant.due}
+            {grant.status}
+            {grant.tags.map(tag => <span className="tag">{tag}</span>)}
+          </div>
+        ))}
+      </section>
 
     </main>
     )

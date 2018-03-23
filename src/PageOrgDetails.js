@@ -81,7 +81,7 @@ class PageOrgDetails extends React.Component {
           
           {/* create index */}
           <ul className="org-details__index">
-            <li className="org-details__index__item"><a className="org-details__index__link--1" onClick={this.showAllDetails}>View All</a></li>
+            <li className="org-details__index__item"><a className="org-details__index__link--1" onClick={this.showAllDetails}>All Details</a></li>
             {this.state.details.map(detail => (
               <li key={detail._id} className="org-details__index__item">
                 <a className="org-details__index__link" onClick={() => this.showDetail(detail._id)}>{detail.title}</a>
@@ -118,20 +118,3 @@ class PageOrgDetails extends React.Component {
 }
 
 export default PageOrgDetails;
-
-
-
-// this.state.details.map(detail => (
-//   <OrgDetail 
-//     key={detail._id} 
-//     title={detail.title}
-//     text={detail.text} />
-//   ))
-// : this.state.details
-//     .filter(detail => detail._id === this.setState.id)
-//     .map(detail => (
-//       <OrgDetail 
-//         key={detail._id} 
-//         title={detail.title}
-//         text={detail.text} />
-//       ))

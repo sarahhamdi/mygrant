@@ -8,12 +8,12 @@
     grid-column: 9 / span 4;
   }
   .org-detail {
-    grid-column: 5 / -1;
+    grid-column: 4 / -1;
   }
   .org-details__index {
     @include padding-margin(0, 0 40px 0 0);
     text-align: right;
-    grid-column: 1 / span 4;
+    grid-column: 1 / span 3;
     grid-row: span 10;
     list-style: none;
     &__item {
@@ -25,12 +25,14 @@
         cursor: pointer;
         font-weight: $font-weight--bolder;
         text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 16px;
       }
     }
   }
   .form--org-info {
     @include padding-margin(100px 200px, 0);
-    background: #fffffff2;
+    background: #090909f2;
     position: absolute;
     top: 0;
     left: 0;

@@ -1,0 +1,21 @@
+.page__grants__container {
+  @include grid(repeat(12, 1fr), auto, 20px);
+  @include padding-margin(0, 0 auto);
+  max-width: 960px;
+  .button {
+    @include flexbox(row-wrap, center, center);
+    @include padding-margin(auto, 30px 0 50px 20px);
+    grid-column: 9 / span 4;
+  }
+  .div {
+    grid-column: 1 / -1;
+    padding: 10px;
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.06);
+  }
+  .tag {
+    padding: 3px 10px;
+    margin: 5px;
+    background: $forget-me-not;
+    font-size: 11px;
+  }
+}
