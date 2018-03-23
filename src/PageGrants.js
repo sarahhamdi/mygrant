@@ -5,6 +5,7 @@ import addLight from './assets/icon-add-light.svg';
 import Header from './components/Header/Header';
 import ButtonWithIcon from './components/ButtonWithIcon/ButtonWithIcon';
 import FormGrant from './components/FormGrant/FormGrant';
+import GrantCard from './components/GrantCard/GrantCard';
 
 class PageGrants extends React.Component {
   state = {
@@ -65,18 +66,19 @@ class PageGrants extends React.Component {
           : null}
         
         {this.state.grants.map(grant => (
-          <div key={grant._id} className="div">
-            <h4>{grant.name}</h4>
-            <p>{grant.issuer}</p>
-            {grant.amount}
-            
-            {grant.grantLink}
-            {grant.granted}
-            {grant.due}
-            {grant.status}
-            {grant.tags.map(tag => <span className="tag">{tag}</span>)}
-          </div>
+            <GrantCard 
+              key={grant.id}
+              id={grant.id}
+              name={grant.name}
+              issuer={grant.issuer}
+              tags={grant.tags}
+              amount={grant.amount}
+              grantlink={grant.grantlink}
+              granted={grant.granted}
+              due={grant.due}
+              status={grant.status} />
         ))}
+
       </section>
 
     </main>

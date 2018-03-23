@@ -434,14 +434,26 @@ button {
     margin: 30px 0 50px 20px;
     grid-column: 9 / span 4; }
   .page__grants__container .div {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 20px;
     grid-column: 1 / -1;
     padding: 10px;
     box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.06); }
+    .page__grants__container .div h4, .page__grants__container .div p {
+      margin: 0; }
+    .page__grants__container .div p {
+      font-size: 12px; }
+    .page__grants__container .div h4 {
+      text-transform: none;
+      font-weight: 600;
+      margin-bottom: 5px; }
   .page__grants__container .tag {
     padding: 3px 10px;
-    margin: 5px;
+    margin: 2spx;
     background: #fef2ee;
-    font-size: 11px; }
+    font-size: 12px; }
 
 html {
   font-size: 62.5%; }
