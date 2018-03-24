@@ -11,7 +11,8 @@ import GrantCard from './components/GrantCard/GrantCard';
 class PageGrants extends React.Component {
   state = {
     grants: [],
-    visible: false
+    visible: false,
+    updated: false
   }
 
   refresh = () => {
@@ -32,6 +33,13 @@ class PageGrants extends React.Component {
         grants
       })
     });
+  }
+
+  update = () => {
+    this.setState({
+      updated: true
+    })
+    this.refresh();
   }
 
   showForm = e => {
@@ -70,8 +78,8 @@ class PageGrants extends React.Component {
 
         {this.state.grants.map(grant => (
             <GrantCard 
-              key={grant.id}
-              id={grant.id}
+              key={grant._id}
+              id={grant._id}
               name={grant.name}
               issuer={grant.issuer}
               tags={grant.tags}
@@ -79,7 +87,8 @@ class PageGrants extends React.Component {
               grantlink={grant.grantLink}
               granted={grant.granted}
               due={grant.due}
-              status={grant.status} />
+              status={grant.status} 
+              action={this.update} />
         ))}
 
       </section>

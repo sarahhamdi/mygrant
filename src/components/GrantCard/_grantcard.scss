@@ -5,8 +5,10 @@
   padding: 16px 30px;
   border: 1px solid $forget-me-not;
   border-left: 4px solid $salmon;
+  // box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.06);
   &:hover {
     background: #e0e0e01a;
+box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.06);
   }
   &__name {
     text-transform: none;

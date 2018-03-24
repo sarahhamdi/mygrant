@@ -368,7 +368,8 @@ button {
   border: 1px solid #fef2ee;
   border-left: 4px solid #ff6e6e; }
   .grant-card:hover {
-    background: #e0e0e01a; }
+    background: #e0e0e01a;
+    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.06); }
   .grant-card__name {
     text-transform: none;
     font-weight: 700;
@@ -454,7 +455,16 @@ button {
     text-align: right;
     grid-column: 1 / span 3;
     grid-row: span 10;
-    list-style: none; }
+    list-style: none;
+    position: relative; }
+    .page__org-details__container .org-details__index:after {
+      content: "";
+      height: 85%;
+      width: 1px;
+      background: #ffe6e2;
+      top: 5px;
+      right: -30px;
+      position: absolute; }
     .page__org-details__container .org-details__index__item {
       padding: 0;
       margin: 0 0 12px 0; }

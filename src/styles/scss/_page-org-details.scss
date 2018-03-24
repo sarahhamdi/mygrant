@@ -16,6 +16,16 @@
     grid-column: 1 / span 3;
     grid-row: span 10;
     list-style: none;
+    position: relative;
+    &:after {
+      content: "";
+      height: 85%;
+      width: 1px;
+      background: #ffe6e2;
+      top: 5px;
+      right: -30px;
+      position: absolute;
+    }
     &__item {
       @include padding-margin(0, 0 0 12px 0);
     }

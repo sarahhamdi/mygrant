@@ -1,11 +1,23 @@
 import React from 'react';
+import axios from "axios"
 
 import H3 from '../H3/H3';
 import Paragraph from '../Paragraph/Paragraph';
 
 class GrantCard extends React.Component {
   state = {
-    status: ['Not Yet Applied', 'Applied', 'Denied', 'Granted']
+    status: ['Not Yet Applied', 'Applied', 'Denied', 'Granted'],
+    id: this.props.id
+  }
+
+  delete = () => {
+    const { id } = this.state;
+    axios
+    .delete(`/grants/${id}`)
+    .then(res => {
+      console.log(res.data.payload)
+      this.props.action();
+    });
   }
 
   render() {
