@@ -346,14 +346,28 @@ button {
       outline: 2px solid transparent; }
 
 .org-detail {
-  margin-bottom: 40px; }
+  padding: 0;
+  margin: 0 0 40px 0; }
   .org-detail__button-container {
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-end;
-    margin-bottom: 20px; }
+    align-content: inherit;
+    padding: 0;
+    margin: 0 0 20px 0; }
+  .org-detail__button {
+    padding: 5px 10px;
+    margin: 0 10px 0 0;
+    font-size: 12px;
+    font-size: 1.2rem;
+    background: #242424;
+    height: 30px;
+    border: none; }
+    .org-detail__button:hover {
+      background: #9b9b9b; }
   .org-detail__title,
   .org-detail .inputtext__input {
+    padding: 0;
     margin: 0; }
   .org-detail .disabled .inputtext__input,
   .org-detail .disabled .textarea__input {
@@ -372,16 +386,8 @@ button {
   .org-detail .inputtext__input {
     font-weight: 700; }
   .org-detail .textarea__input {
+    padding: 0;
     margin: 10px 0; }
-  .org-detail__button {
-    height: 30px;
-    margin-right: 10px;
-    font-size: 12px;
-    padding: 5px 10px;
-    background: #242424;
-    border: none; }
-    .org-detail__button:hover {
-      background: #9b9b9b; }
 
 .grant-card {
   display: grid;
@@ -391,9 +397,6 @@ button {
   padding: 16px 30px;
   border: 1px solid #fef2ee;
   border-left: 4px solid #ff6e6e; }
-  .grant-card:hover {
-    background: #e0e0e01a;
-    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.06); }
   .grant-card__name {
     text-transform: none;
     font-weight: 700;

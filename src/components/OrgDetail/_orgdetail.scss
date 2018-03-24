@@ -1,14 +1,24 @@
 .org-detail {
-  margin-bottom: 40px;
+  @include padding-margin(0, 0 0 40px 0);
+  // buttons
   &__button-container {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-end;
-    margin-bottom: 20px;
+    @include flexbox(row wrap, flex-end, inherit);
+    @include padding-margin(0, 0 0 20px 0);
   }
+  &__button {
+    @include padding-margin(5px 10px, 0 10px 0 0);
+    @include fontSize(12);
+    background: $charcoal;    
+    height: 30px;
+    border: none;
+    &:hover {
+      background: $aluminium;
+    }
+  }
+  // inline form
   &__title,
   .inputtext__input {
-    margin: 0
+    @include padding-margin(0, 0);
   }
   .disabled .inputtext__input,
   .disabled .textarea__input {
@@ -28,20 +38,9 @@
   }
   .inputtext__input {
     @extend .header-4;
-    font-weight: 700;
+    font-weight: $font-weight--bolder;
   }
   .textarea__input {
-    margin: 10px 0;
-  }
-  &__button {
-    height: 30px;
-    margin-right: 10px;
-    font-size: 12px;
-    padding: 5px 10px;
-    background: $charcoal;
-    border: none;
-    &:hover {
-      background: $aluminium;
-    }
+    @include padding-margin(0, 10px 0);
   }
 }

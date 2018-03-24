@@ -64,41 +64,32 @@ class PageGrants extends React.Component {
   render() {
     return (
       <main className="page__grants">
-      <Header />
-
-      <section className="page__grants__container">
-        
-        <ButtonWithIcon type={addLight} text="Add a Grant" action={this.showForm} />
-
         {this.state.visible ?
           <FormGrant name="form-grants" id="form-grants" action={this.hideForm}/>
-          : null}
-
-        <H2 text="Upcoming Grants" />
-
-        {this.state.grants.map(grant => (
-            <GrantCard 
-              key={grant._id}
-              id={grant._id}
-              name={grant.name}
-              issuer={grant.issuer}
-              tags={grant.tags}
-              amount={grant.amount}
-              grantlink={grant.grantLink}
-              granted={grant.granted}
-              due={grant.due}
-              status={grant.status} 
-              action={this.update} />
-        ))}
-
-      </section>
-
-    </main>
+          : <React.Fragment>
+              <Header />
+              <section className="page__grants__container">
+                <ButtonWithIcon type={addLight} text="Add a Grant" action={this.showForm} />
+                <H2 text="Upcoming Grants" />
+                {this.state.grants.map(grant => (
+                    <GrantCard 
+                      key={grant._id}
+                      id={grant._id}
+                      name={grant.name}
+                      issuer={grant.issuer}
+                      tags={grant.tags}
+                      amount={grant.amount}
+                      grantlink={grant.grantLink}
+                      granted={grant.granted}
+                      due={grant.due}
+                      status={grant.status} 
+                      action={this.update} />
+                ))}
+              </section>
+            </React.Fragment>}
+      </main>
     )
   }
 }
-
-
-
 
 export default PageGrants;

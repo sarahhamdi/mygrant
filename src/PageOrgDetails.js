@@ -72,47 +72,44 @@ class PageOrgDetails extends React.Component {
       <main className="page__org-details">
        {/* show form */}
        {this.state.visible ?
-        <FormOrgDetails name="form-org-info" id="form-org-info" action={this.hideForm} />
+          <FormOrgDetails name="form-org-info" id="form-org-info" action={this.hideForm} />
         : <React.Fragment> 
-        <Header />
+            <Header />
+            <section className="page__org-details__container">
+              <ButtonWithIcon type={addLight} text="Add a Field" action={this.showForm}/>
 
-        <section className="page__org-details__container">
-          <ButtonWithIcon type={addLight} text="Add a Field" action={this.showForm}/>
-
-         
-          
-          {/* create index */}
-          <ul className="org-details__index">
-            <li className="org-details__index__item"><a className="org-details__index__link--1" onClick={this.showAllDetails}>All Details</a></li>
-            {this.state.details.map(detail => (
-              <li key={detail._id} className="org-details__index__item">
-                <a className="org-details__index__link" onClick={() => this.showDetail(detail._id)}>{detail.title}</a>
-              </li>))}
-          </ul>
-          
-          {/* display details */}
-          {this.state.id === 0 ?
-            this.state.details.map(detail => (
-              <OrgDetail 
-                id={detail._id} 
-                key={detail._id} 
-                title={detail.title}
-                text={detail.text}
-                action={this.update} />
-              ))
-            : this.state.details
-                .filter(detail => detail._id === this.state.id)
-                .map(detail => (
+              {/* create index */}
+              <ul className="org-details__index">
+                <li className="org-details__index__item"><a className="org-details__index__link--1" onClick={this.showAllDetails}>All Details</a></li>
+                {this.state.details.map(detail => (
+                  <li key={detail._id} className="org-details__index__item">
+                    <a className="org-details__index__link" onClick={() => this.showDetail(detail._id)}>{detail.title}</a>
+                  </li>))}
+              </ul>
+              
+              {/* display details */}
+              {this.state.id === 0 ?
+                this.state.details.map(detail => (
                   <OrgDetail 
                     id={detail._id} 
                     key={detail._id} 
                     title={detail.title}
                     text={detail.text}
                     action={this.update} />
-                  ))}          
+                  ))
+                : this.state.details
+                    .filter(detail => detail._id === this.state.id)
+                    .map(detail => (
+                      <OrgDetail 
+                        id={detail._id} 
+                        key={detail._id} 
+                        title={detail.title}
+                        text={detail.text}
+                        action={this.update} />
+                      ))}          
+              </section>
 
-        </section>
-        </React.Fragment> }
+            </React.Fragment> }
       </main>
 
     )

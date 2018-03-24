@@ -36,7 +36,7 @@ class FormGrant extends React.Component {
   }
 
   render() {
-    const { name, id } = this.props;
+    const { name, id, action } = this.props;
     return (
       <form name={name} id={id} className="form--grant" onSubmit={this.postNewGrant}>
       <InputText 
@@ -87,7 +87,8 @@ class FormGrant extends React.Component {
         label="Notes" 
         id="grant-notes" 
         handleChange={this.handleChange} />
-      <Button text="Add Grant" />
+      <Button text="Save" />
+      <Button text="Cancel" action={action} />
     </form>
     )
   }
