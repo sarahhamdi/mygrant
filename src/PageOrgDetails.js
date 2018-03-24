@@ -70,15 +70,16 @@ class PageOrgDetails extends React.Component {
   render() {
     return(
       <main className="page__org-details">
+       {/* show form */}
+       {this.state.visible ?
+        <FormOrgDetails name="form-org-info" id="form-org-info" action={this.hideForm} />
+        : <React.Fragment> 
         <Header />
 
         <section className="page__org-details__container">
           <ButtonWithIcon type={addLight} text="Add a Field" action={this.showForm}/>
 
-          {/* show form */}
-          {this.state.visible ?
-            <FormOrgDetails name="form-org-info" id="form-org-info" action={this.hideForm} />
-            : null }
+         
           
           {/* create index */}
           <ul className="org-details__index">
@@ -111,7 +112,7 @@ class PageOrgDetails extends React.Component {
                   ))}          
 
         </section>
-
+        </React.Fragment> }
       </main>
 
     )
