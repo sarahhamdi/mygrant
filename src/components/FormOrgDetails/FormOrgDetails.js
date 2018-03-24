@@ -29,9 +29,9 @@ class FormOrgInfo extends React.Component {
   }
 
   render() {
-    const { name, id } = this.props;
+    const { name, id, action } = this.props;
     return (
-      <form name={name} id={id} onSubmit={this.postNewOrgDetail} className="form--org-info">
+      <form name={name} id={id} className="form--org-info" onSubmit={this.postNewOrgDetail} >
         <InputText 
           name="title" 
           placeholder=" "  
@@ -44,7 +44,8 @@ class FormOrgInfo extends React.Component {
           label="text" 
           id="newInputText"
           handleChange={this.handleChange} />
-        <Button text="Add Org Details"/>
+        <Button text="Add Org Details" />
+        <Button text="Cancel" action={action} />
       </form>
 
     )

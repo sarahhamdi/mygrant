@@ -44,11 +44,12 @@ class PageOrgDetails extends React.Component {
     })
   }
 
-  hideForm = () => (
+  hideForm = e => {
+    e.preventDefault();
     this.setState({
       visible: false
     })
-  )
+  }
   
   showDetail = (id) => {
     this.setState({
@@ -76,7 +77,7 @@ class PageOrgDetails extends React.Component {
 
           {/* show form */}
           {this.state.visible ?
-            <FormOrgDetails name="form-org-info" id="form-org-info" />
+            <FormOrgDetails name="form-org-info" id="form-org-info" action={this.hideForm} />
             : null }
           
           {/* create index */}
