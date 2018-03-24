@@ -7,28 +7,10 @@
     @include padding-margin(auto, 30px 0 50px 20px);
     grid-column: 9 / span 4;
   }
-  .div {
-    @include grid(repeat(12, 1fr), auto, 20px);
+  .header-2  {
     grid-column: 1 / -1;
-    padding: 10px;
-    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.06);
-    h4, p {
-      margin: 0;
-    }
-    p {
-      font-size: 12px;
-    }
-    h4 {
-      text-transform: none;
-      font-weight: $font-weight--bold;
-      margin-bottom: 5px;
-    }
   }
-  .tag {
-    padding: 3px 10px;
-    margin: 2spx;
-    background: $forget-me-not;
-    font-size: 12px;
-
+  .grant-card {
+    grid-column: span 11;
   }
 }

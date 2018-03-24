@@ -1,0 +1,76 @@
+.grant-card {
+  @include grid(repeat(12, 1fr), auto, 10px);
+  // border-radius: 2px;
+  // box-shadow: 0 0 2px 0 rgba(0,0,0,0.12), 0 2px 2px 0 rgba(0,0,0,0.24);
+  padding: 16px 30px;
+  border: 1px solid $forget-me-not;
+  border-left: 4px solid $salmon;
+  &:hover {
+    background: #e0e0e01a;
+  }
+  &__name {
+    text-transform: none;
+    font-weight: $font-weight--bolder;
+    margin: 0;
+    // margin-bottom: 5px;
+    grid-column: span 4;
+    font-size: 15px;
+  }
+  &__issuer,
+  &__link {
+    margin: 0;
+    font-size: 12px;
+    grid-column: span 4;
+    grid-row: 2;
+  }
+  &__link {
+    grid-row: 3;
+  }
+  &__tag,
+  &__amount {
+    padding: 3px 10px;
+    margin: 2px;
+    background: $forget-me-not;
+    font-size: 12px;
+    height: fit-content;
+  }
+  &__tags {
+    grid-column: span 3;
+    display: flex;
+    flex-flow: row wrap;
+    grid-row: span 2;
+    align-content: flex-start;
+  }
+  &__amount {
+    background: white;
+    border: 1px solid $forget-me-not;
+    // height: fit-content;
+  }
+  &__status {
+    grid-column: 11 / span 2;
+    text-align: right;
+    font-size: 12px;
+    margin: 0;
+  }
+  &__date {
+    grid-column: 9 / span 2;
+    text-align: center;
+    font-size: 12px;
+    margin: 0;
+  }
+  &__buttons {
+
+  }
+  &__button {
+    height: 30px;
+    margin: 0 0 5px;
+    font-size: 12px;
+    padding: 5px 10px;
+    background: $charcoal;
+    border: none;
+    width: 100%;
+    &:hover {
+      background: $aluminium;
+    }
+  }
+}

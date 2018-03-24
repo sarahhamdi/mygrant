@@ -3,22 +3,43 @@ import React from 'react';
 import H3 from '../H3/H3';
 import Paragraph from '../Paragraph/Paragraph';
 
-const GrantCard = ({ id, name, issuer, tags, amount, grantlink, granted, due, status, link }) => (
-  <div className="grant-card">
-    <h4 className="grant-card__name">{name}</h4>
-    <p className="grant-card__issuer">{issuer}</p>
-    <p className="grant-card__link"><a href={link}>Grant Link</a></p>
-    {tags.map(tag => (
-      <div className="grant-card__tags">
-      <span className="grant-card__tag">{tag}</span>
-    </div>
-    ))}
-    <p className="grant-card__date">{due}</p>
-    <p className="grant-card__status">{status}</p>
-  </div>
-)
+class GrantCard extends React.Component {
+  state = {
+    status: ['Not Yet Applied', 'Applied', 'Denied', 'Granted']
+  }
+
+  render() {
+    const { name, issuer, tags, amount, grantlink, due, status } = this.props;
+    return (
+      <React.Fragment>
+      <div className="grant-card">
+        <H3 extraClass="grant-card__name" text={name} />
+        <Paragraph extraClass="grant-card__issuer" text={issuer} />
+        <Paragraph extraClass="grant-card__link" text={<a href={grantlink} target="_blank">Grant Link</a>} />
+        <div className="grant-card__tags">
+          {tags.map(tag => (
+            <span className="grant-card__tag">{tag}</span>
+          ))}
+        </div>
+        <span className="grant-card__amount">{amount}</span>
+        <Paragraph extraClass="grant-card__date" text={due} />
+        <Paragraph extraClass="grant-card__status" text={this.state.status[status - 1]} />
+      </div>
+      <div className="grant-card__buttons">
+        <button 
+          className="grant-card__button" 
+          onClick={this.delete}>delete</button>
+        <button 
+          className="grant-card__button" 
+          onClick={this.save}>edit</button>
+      </div>
+      </React.Fragment>
+    )
+  }
+}
 
 export default GrantCard;
+
 
 
 

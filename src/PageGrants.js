@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 
 import addLight from './assets/icon-add-light.svg';
+import H2 from './components/H2/H2';
 import Header from './components/Header/Header';
 import ButtonWithIcon from './components/ButtonWithIcon/ButtonWithIcon';
 import FormGrant from './components/FormGrant/FormGrant';
@@ -64,7 +65,9 @@ class PageGrants extends React.Component {
         {this.state.visible ?
           <FormGrant name="form-grants" id="form-grants" action={this.hideForm}/>
           : null}
-        
+
+        <H2 text="Upcoming Grants" />
+
         {this.state.grants.map(grant => (
             <GrantCard 
               key={grant.id}
@@ -73,7 +76,7 @@ class PageGrants extends React.Component {
               issuer={grant.issuer}
               tags={grant.tags}
               amount={grant.amount}
-              grantlink={grant.grantlink}
+              grantlink={grant.grantLink}
               granted={grant.granted}
               due={grant.due}
               status={grant.status} />

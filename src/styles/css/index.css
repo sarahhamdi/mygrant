@@ -359,6 +359,65 @@ button {
     .org-detail__button:hover {
       background: #9b9b9b; }
 
+.grant-card {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto;
+  grid-gap: 10px;
+  padding: 16px 30px;
+  border: 1px solid #fef2ee;
+  border-left: 4px solid #ff6e6e; }
+  .grant-card:hover {
+    background: #e0e0e01a; }
+  .grant-card__name {
+    text-transform: none;
+    font-weight: 700;
+    margin: 0;
+    grid-column: span 4;
+    font-size: 15px; }
+  .grant-card__issuer, .grant-card__link {
+    margin: 0;
+    font-size: 12px;
+    grid-column: span 4;
+    grid-row: 2; }
+  .grant-card__link {
+    grid-row: 3; }
+  .grant-card__tag, .grant-card__amount {
+    padding: 3px 10px;
+    margin: 2px;
+    background: #fef2ee;
+    font-size: 12px;
+    height: fit-content; }
+  .grant-card__tags {
+    grid-column: span 3;
+    display: flex;
+    flex-flow: row wrap;
+    grid-row: span 2;
+    align-content: flex-start; }
+  .grant-card__amount {
+    background: white;
+    border: 1px solid #fef2ee; }
+  .grant-card__status {
+    grid-column: 11 / span 2;
+    text-align: right;
+    font-size: 12px;
+    margin: 0; }
+  .grant-card__date {
+    grid-column: 9 / span 2;
+    text-align: center;
+    font-size: 12px;
+    margin: 0; }
+  .grant-card__button {
+    height: 30px;
+    margin: 0 0 5px;
+    font-size: 12px;
+    padding: 5px 10px;
+    background: #242424;
+    border: none;
+    width: 100%; }
+    .grant-card__button:hover {
+      background: #9b9b9b; }
+
 .page__login {
   width: 960px;
   margin: 75px auto; }
@@ -433,27 +492,10 @@ button {
     padding: auto;
     margin: 30px 0 50px 20px;
     grid-column: 9 / span 4; }
-  .page__grants__container .div {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: auto;
-    grid-gap: 20px;
-    grid-column: 1 / -1;
-    padding: 10px;
-    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.06); }
-    .page__grants__container .div h4, .page__grants__container .div p {
-      margin: 0; }
-    .page__grants__container .div p {
-      font-size: 12px; }
-    .page__grants__container .div h4 {
-      text-transform: none;
-      font-weight: 600;
-      margin-bottom: 5px; }
-  .page__grants__container .tag {
-    padding: 3px 10px;
-    margin: 2spx;
-    background: #fef2ee;
-    font-size: 12px; }
+  .page__grants__container .header-2 {
+    grid-column: 1 / -1; }
+  .page__grants__container .grant-card {
+    grid-column: span 11; }
 
 html {
   font-size: 62.5%; }
