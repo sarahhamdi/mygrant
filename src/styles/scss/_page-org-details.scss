@@ -4,8 +4,8 @@
   max-width: 960px;
   .button {
     @include flexbox(row-wrap, center, center);
-    @include padding-margin(auto, 30px 0 50px 20px);
-    grid-column: 9 / span 4;
+    @include padding-margin(auto, 30px 0 50px 0);
+    grid-column: 10 / span 3;
   }
   .org-detail {
     grid-column: 4 / -1;

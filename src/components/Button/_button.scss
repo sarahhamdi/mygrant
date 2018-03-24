@@ -1,6 +1,6 @@
 button {
-  @include fontSize(20);
-  @include padding-margin(16px 32px, 0);
+  @include fontSize(18);
+  @include padding-margin(10px 20px, 0);
   background: $salmon;
   border: none;
   color: $desert-storm; 
