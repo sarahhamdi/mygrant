@@ -41,6 +41,7 @@ class OrgDetail extends React.Component {
       .patch('/org-details', { title, text, id })
       .then(res => {
         console.log(res)
+        this.props.action();
       })
       .catch(err => {
         console.log(err)

@@ -11,8 +11,7 @@ class PageOrgDetails extends React.Component {
   state = {
     details: [],
     id: 0,
-    visible: false,
-    updated: false
+    visible: false
   }
 
   refresh = () => {
@@ -25,15 +24,9 @@ class PageOrgDetails extends React.Component {
         details
       })
     });
-    this.setState({
-      updated: false
-    })
   }
 
   update = () => {
-    this.setState({
-      updated: true
-    })
     this.refresh();
   }
 
@@ -72,7 +65,7 @@ class PageOrgDetails extends React.Component {
       <main className="page__org-details">
        {/* show form */}
        {this.state.visible ?
-          <FormOrgDetails name="form-org-info" id="form-org-info" action={this.hideForm} />
+          <FormOrgDetails name="form-org-info" id="form-org-info" hideForm={this.hideForm} update={this.update}/>
         : <React.Fragment> 
             <Header />
             <section className="page__org-details__container">

@@ -16,12 +16,15 @@ class FormOrgInfo extends React.Component {
     });
   };
 
-  postNewOrgDetail = () => {
+  postNewOrgDetail = e => {
+    e.preventDefault();
     const { title, text } = this.state;
     axios
       .post('/org-details', { title, text })
       .then(res => {
         console.log(res)
+        this.props.hideForm(e);
+        this.props.update();
       })
       .catch(err => {
         console.log(err)
@@ -29,7 +32,7 @@ class FormOrgInfo extends React.Component {
   }
 
   render() {
-    const { name, id, action } = this.props;
+    const { name, id, hideForm } = this.props;
     return (
       <form name={name} id={id} className="form--org-info" onSubmit={this.postNewOrgDetail} >
         <InputText 
@@ -45,9 +48,8 @@ class FormOrgInfo extends React.Component {
           id="newInputText"
           handleChange={this.handleChange} />
         <Button text="Save" />
-        <Button text="Cancel" action={action} />
+        <Button text="Cancel" action={hideForm} />
       </form>
-
     )
   }
 }
