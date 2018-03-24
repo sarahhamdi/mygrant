@@ -356,13 +356,13 @@ button {
     padding: 0;
     margin: 0 0 20px 0; }
   .org-detail__button {
-    padding: 5px 10px;
-    margin: 0 10px 0 0;
     font-size: 12px;
     font-size: 1.2rem;
+    padding: 5px 10px;
+    margin: 0 10px 0 0;
     background: #242424;
-    height: 30px;
-    border: none; }
+    border: none;
+    height: 30px; }
     .org-detail__button:hover {
       background: #9b9b9b; }
   .org-detail__title,
@@ -376,13 +376,13 @@ button {
     .org-detail .disabled .textarea__input:hover,
     .org-detail .disabled .textarea__input:focus {
       background: none;
-      outline: 2px solid transparent;
-      border: 2px solid transparent; }
+      border: 2px solid transparent;
+      outline: 2px solid transparent; }
   .org-detail .editable .inputtext__input,
   .org-detail .editable .textarea__input {
-    background: #fff9f8;
-    outline: 2px solid #fff5f4;
-    border: 2px solid #fff9f8; }
+    background: #fef2ee;
+    border: 2px solid #fef2ee;
+    outline: 2px solid #fef2ee; }
   .org-detail .inputtext__input {
     font-weight: 700; }
   .org-detail .textarea__input {
@@ -479,30 +479,31 @@ button {
   .page__org-details__container .org-details__index {
     padding: 0;
     margin: 0 40px 0 0;
-    text-align: right;
     grid-column: 1 / span 3;
     grid-row: span 10;
     list-style: none;
-    position: relative; }
+    position: relative;
+    text-align: right; }
     .page__org-details__container .org-details__index:after {
+      background: #ffe6e2;
       content: "";
       height: 85%;
-      width: 1px;
-      background: #ffe6e2;
-      top: 5px;
+      position: absolute;
       right: -30px;
-      position: absolute; }
+      top: 5px;
+      width: 1px; }
     .page__org-details__container .org-details__index__item {
       padding: 0;
       margin: 0 0 12px 0; }
     .page__org-details__container .org-details__index__link {
       cursor: pointer; }
       .page__org-details__container .org-details__index__link--1 {
+        font-size: 16px;
+        font-size: 1.6rem;
         cursor: pointer;
         font-weight: 700;
-        text-transform: uppercase;
         letter-spacing: 1px;
-        font-size: 16px; }
+        text-transform: uppercase; }
 
 .page__grants__container {
   display: grid;

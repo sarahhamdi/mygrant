@@ -6,11 +6,11 @@
     @include padding-margin(0, 0 0 20px 0);
   }
   &__button {
-    @include padding-margin(5px 10px, 0 10px 0 0);
     @include fontSize(12);
+    @include padding-margin(5px 10px, 0 10px 0 0);
     background: $charcoal;    
-    height: 30px;
     border: none;
+    height: 30px;
     &:hover {
       background: $aluminium;
     }
@@ -26,15 +26,15 @@
     &:hover,
     &:focus {
       background: none;
-      outline: 2px solid transparent;
       border: 2px solid transparent;
+      outline: 2px solid transparent;
     }
   }
   .editable .inputtext__input,
   .editable .textarea__input {
-    background: #fff9f8;
-    outline: 2px solid #fff5f4;
-    border: 2px solid #fff9f8;
+    background: $forget-me-not;
+    border: 2px solid $forget-me-not;
+    outline: 2px solid $forget-me-not;
   }
   .inputtext__input {
     @extend .header-4;
