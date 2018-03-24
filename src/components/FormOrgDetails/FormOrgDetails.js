@@ -44,7 +44,7 @@ class FormOrgInfo extends React.Component {
           label="text" 
           id="newInputText"
           handleChange={this.handleChange} />
-        <Button text="Add Org Details" />
+        <Button text="Save" />
         <Button text="Cancel" action={action} />
       </form>
 
