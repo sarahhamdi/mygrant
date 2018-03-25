@@ -167,8 +167,8 @@ h2,
 
 h3,
 .header-3 {
-  font-size: 20px;
-  font-size: 2rem; }
+  font-size: 18px;
+  font-size: 1.8rem; }
 
 h4,
 .header-4,
@@ -180,8 +180,8 @@ h4,
 
 p,
 .paragraph {
-  font-size: 16px;
-  font-size: 1.6rem;
+  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: 300;
   letter-spacing: 1px; }
 
@@ -282,11 +282,14 @@ button {
 .inputtext__input {
   padding: 12px 4px;
   margin: 20px 0 40px 0;
+  font-size: 14px;
+  font-size: 1.4rem;
   border: none;
   border-bottom: 2px solid #fdbdb3;
   color: #242424;
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
+  line-height: 1.6;
   width: 100%;
   transition: background 0.3s; }
   .inputtext__input:hover, .inputtext__input:focus {
@@ -300,10 +303,13 @@ button {
 .textarea__input {
   padding: 12px 4px;
   margin: 20px 0 40px 0;
+  font-size: 14px;
+  font-size: 1.4rem;
   border: 2px solid #fdbdb3;
   color: #242424;
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
+  line-height: 1.6;
   min-height: 200px;
   transition: background 0.3s;
   width: 100%; }
@@ -321,8 +327,45 @@ button {
 .form--login .button {
   width: 100%; }
 
+.form--grant {
+  padding: 50px 30%;
+  margin: 0;
+  background: #242424;
+  color: white;
+  height: 100vh;
+  width: 100%; }
+  .form--grant .header-3 {
+    margin: 0; }
+  .form--grant .button {
+    padding: 10px 20px;
+    margin: 10px 0 0 20px;
+    float: right;
+    font-size: 18px; }
+    .form--grant .button.form--grant__close {
+      padding: 0;
+      margin: 0 0 20px 0;
+      background: none;
+      border: none;
+      float: none;
+      font-size: 14px;
+      font-weight: lighter;
+      letter-spacing: 1px;
+      outline: #242424;
+      text-align: right;
+      text-transform: none;
+      width: 100%; }
+  .form--grant input,
+  .form--grant textarea {
+    background: white;
+    border: 2px solid white;
+    margin: 10px 0 30px 0;
+    padding: 4px; }
+    .form--grant input:hover,
+    .form--grant textarea:hover {
+      outline: 2px solid transparent; }
+
 .form--org-info {
-  padding: 100px 30%;
+  padding: 50px 30%;
   margin: 0;
   background: #242424;
   color: white;
@@ -331,16 +374,29 @@ button {
   .form--org-info .header-3 {
     margin: 0; }
   .form--org-info .button {
+    padding: 10px 20px;
     margin: 10px 0 0 20px;
     float: right;
-    padding: 10px 20px;
     font-size: 18px; }
+    .form--org-info .button.form--grant__close {
+      padding: 0;
+      margin: 0 0 20px 0;
+      background: none;
+      border: none;
+      float: none;
+      font-size: 14px;
+      font-weight: lighter;
+      letter-spacing: 1px;
+      outline: #242424;
+      text-align: right;
+      text-transform: none;
+      width: 100%; }
   .form--org-info input,
   .form--org-info textarea {
-    border: 2px solid white;
     background: white;
-    padding: 8px 10px;
-    margin: 10px 0 30px 0; }
+    border: 2px solid white;
+    margin: 10px 0 30px 0;
+    padding: 4px; }
     .form--org-info input:hover,
     .form--org-info textarea:hover {
       outline: 2px solid transparent; }

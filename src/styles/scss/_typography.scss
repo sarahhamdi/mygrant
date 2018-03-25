@@ -47,7 +47,7 @@ h2,
 
 h3,
 .header-3 {
-    @include fontSize(20);
+    @include fontSize(18);
 }
 
 h4,
@@ -60,7 +60,7 @@ h4,
 
 p,
 .paragraph {
-    @include fontSize(16);
+    @include fontSize(14);
     font-weight: $font-weight--light;
     letter-spacing: 1px;
 }

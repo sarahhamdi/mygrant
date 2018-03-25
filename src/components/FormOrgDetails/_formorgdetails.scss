@@ -1,5 +1,5 @@
 .form--org-info {
-  @include padding-margin(100px 30%, 0);
+  @include padding-margin(50px 30%, 0);
   background: $charcoal;
   color: white;
   height: 100vh;
@@ -8,17 +8,29 @@
     margin: 0;
   }
   .button {
-    margin: 10px 0 0 20px;
+    @include padding-margin(10px 20px, 10px 0 0 20px);
     float: right;
-    padding: 10px 20px;
     font-size: 18px;
+    &.form--grant__close {
+      @include padding-margin(0, 0 0 20px 0);
+      background: none;
+      border: none;
+      float: none;
+      font-size: 14px;
+      font-weight: lighter;
+      letter-spacing: 1px;
+      outline: $charcoal;
+      text-align: right;
+      text-transform: none;
+      width: 100%;
+    }
   } 
   input,
   textarea {
-    border: 2px solid white;
     background: white;
-    padding: 8px 10px;
+    border: 2px solid white;
     margin: 10px 0 30px 0;
+    padding: 4px;
     &:hover {
       outline: 2px solid transparent;
     }

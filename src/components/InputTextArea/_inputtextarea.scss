@@ -1,10 +1,12 @@
 .textarea{
   &__input {
     @include padding-margin(12px 4px, 20px 0 40px 0);
+    @include fontSize(14);
     border: 2px solid $melon;
     color: $charcoal;
     font-family: $font-family--body;
     font-weight: $font-weight--light;
+    line-height: 1.6;
     min-height: 200px;
     transition: background 0.3s;
     width: 100%;

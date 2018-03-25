@@ -69,7 +69,7 @@ class PageOrgDetails extends React.Component {
         : <React.Fragment> 
             <Header />
             <section className="page__org-details__container">
-              <ButtonWithIcon type={addLight} text="Add a Field" action={this.showForm}/>
+              <ButtonWithIcon type={addLight} text="Add a Detail" action={this.showForm}/>
 
               {/* create index */}
               <ul className="org-details__index">
