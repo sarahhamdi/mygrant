@@ -14,3 +14,25 @@
     grid-column: span 11;
   }
 }
+
+.page__grants {
+  &__stat,
+  &__stat--total {
+    grid-column: span 2;
+    margin: 0;
+    font-size: 14px;
+  }
+  &__number,
+  &__number--total {
+    margin: 0 0 30px 0;
+    grid-row: 3;
+    grid-column: span 2;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 1;
+  }
+  &__number--total,
+  &__stat--total {
+    grid-column: span 3;
+  }
+}

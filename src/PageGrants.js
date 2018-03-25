@@ -3,6 +3,8 @@ import axios from 'axios';
 
 import addLight from './assets/icon-add-light.svg';
 import H2 from './components/H2/H2';
+import H3 from './components/H3/H3';
+import Paragraph from './components/Paragraph/Paragraph';
 import Header from './components/Header/Header';
 import ButtonWithIcon from './components/ButtonWithIcon/ButtonWithIcon';
 import FormGrant from './components/FormGrant/FormGrant';
@@ -70,6 +72,16 @@ class PageGrants extends React.Component {
               <Header />
               <section className="page__grants__container">
                 <ButtonWithIcon type={addLight} text="Add a Grant" action={this.showForm} />
+
+                <H3 extraClass="page__grants__stat--total" text="Total Grants" />
+                <Paragraph extraClass="page__grants__number--total" text={this.state.grants.length} />
+                <H3 extraClass="page__grants__stat" text="Applied" />
+                <Paragraph extraClass="page__grants__number" text={this.state.grants.filter(grant => grant.status === 2 || grant.status === 3 || grant.status === 4).length} />
+                <H3 extraClass="page__grants__stat" text="Granted" />
+                <Paragraph extraClass="page__grants__number" text={this.state.grants.filter(grant => grant.status === 4).length} />
+                <H3 extraClass="page__grants__stat" text="Denied" />
+                <Paragraph extraClass="page__grants__number" text={this.state.grants.filter(grant => grant.status === 3).length} />
+
                 <H2 text="Upcoming Grants" />
                 {this.state.grants.map(grant => (
                     <GrantCard 
