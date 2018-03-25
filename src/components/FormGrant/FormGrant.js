@@ -1,8 +1,9 @@
 import React from 'react';
-import InputText from '../InputText/InputText'
-import InputTextArea from '../InputTextArea/InputTextArea'
-import Button from '../Button/Button'
-import axios from "axios"
+import InputText from '../InputText/InputText';
+import InputTextArea from '../InputTextArea/InputTextArea';
+import Button from '../Button/Button';
+import Paragraph from '../Paragraph/Paragraph';
+import axios from "axios";
 
 class FormGrant extends React.Component {
   state = {
@@ -14,7 +15,8 @@ class FormGrant extends React.Component {
     tags: '',
     status: Number,
     granted: Number,
-    notes: ''
+    notes: '',
+    error: false
   }
   
   handleChange = e => {
@@ -23,15 +25,21 @@ class FormGrant extends React.Component {
     });
   };
 
-  postNewGrant = () => {
+  postNewGrant = e => {
+    e.preventDefault();
     const { name, issuer, amount, due, grantLink, tags, status, granted, notes } = this.state;
     axios
       .post('/grants', { name, issuer, amount, due, grantLink, tags, status, granted, notes })
       .then(res => {
         console.log(res)
+        this.props.hideForm(e);
+        this.props.update();
       })
       .catch(err => {
         console.log(err)
+        this.setState({
+          error: true
+        })
       })
   }
 
@@ -54,32 +62,35 @@ class FormGrant extends React.Component {
         handleChange={this.handleChange} />
       <InputText 
         name="amount" 
-        placeholder=" " 
+        placeholder="e.g. 30000" 
         label="Grant Amount" 
+        type="number"
         id="grant-amount"
         handleChange={this.handleChange} />
       <InputText 
         name="due" 
-        placeholder=" " 
+        placeholder="yyyy-mm-dd" 
         label="Due Date" 
+        type="date"
         id="grant-due"
         handleChange={this.handleChange} />
       <InputText 
         name="grantLink" 
-        placeholder=" " 
+        placeholder="e.g. http://grantlink.com" 
         label="Link to Application" 
         id="grant-link"
         handleChange={this.handleChange} />
       <InputText 
         name="tags" 
-        placeholder=" " 
+        placeholder="Comma-separated, e.g. youth, seniors" 
         label="Tags" 
         id="grant-tags"
         handleChange={this.handleChange} />
       <InputText 
         name="granted" 
-        placeholder=" " 
-        label="Amount Granted" 
+        placeholder="e.g. 10000" 
+        label="Amount Awarded" 
+        type="number"
         id="grant-amount-granted"
         handleChange={this.handleChange} />
       <InputTextArea
@@ -88,6 +99,9 @@ class FormGrant extends React.Component {
         label="Notes" 
         id="grant-notes" 
         handleChange={this.handleChange} />
+      {this.state.error ? 
+        <Paragraph extraClass="error" text="There was an error adding this grant. Please make sure <strong>Grant Amount</strong> and <strong>Amount Awarded</strong> are number values, and submit again." />
+        : null}
       <Button text="Save" />
     </form>
     )

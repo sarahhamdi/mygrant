@@ -65,7 +65,7 @@ class PageGrants extends React.Component {
     return (
       <main className="page__grants">
         {this.state.visible ?
-          <FormGrant name="form-grants" id="form-grants" hideForm={this.hideForm}/>
+          <FormGrant name="form-grants" id="form-grants" hideForm={this.hideForm} update={this.update}/>
           : <React.Fragment>
               <Header />
               <section className="page__grants__container">

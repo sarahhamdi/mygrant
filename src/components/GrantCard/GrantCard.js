@@ -19,7 +19,7 @@ class GrantCard extends React.Component {
       this.props.action();
     });
   }
-
+ 
   render() {
     const { name, issuer, tags, amount, grantlink, due, status } = this.props;
     return (
