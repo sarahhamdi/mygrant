@@ -1,6 +1,7 @@
 import React from 'react';
-import InputText from '../InputText/InputText'
-import Button from '../Button/Button'
+import InputText from '../InputText/InputText';
+import Button from '../Button/Button';
+import { Link } from 'react-router-dom';
 
 const FormLogin= ({ name, id }) => (
   <form name={name} id={id} method="post" className="form--login">
@@ -19,7 +20,7 @@ const FormLogin= ({ name, id }) => (
       id="registration--input-password"
       required="true" />
     <Button text="Login"/>
-    <p className="paragraph paragraph--right"><a href="/register">Not registered? Register here.</a></p>
+    <p className="paragraph paragraph--right"><Link to={"/register"}>Not registered? Register here.</Link></p>
   </form>
 )
 

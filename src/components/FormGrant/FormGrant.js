@@ -27,7 +27,11 @@ class FormGrant extends React.Component {
 
   postNewGrant = e => {
     e.preventDefault();
+    this.setState({
+      tags: this.state.tags[0].split(",")
+    })
     const { name, issuer, amount, due, grantLink, tags, status, granted, notes } = this.state;
+
     axios
       .post('/grants', { name, issuer, amount, due, grantLink, tags, status, granted, notes })
       .then(res => {

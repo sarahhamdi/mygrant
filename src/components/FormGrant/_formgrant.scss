@@ -1,8 +1,8 @@
 .form--grant {
-  @include padding-margin(50px 30%, 0);
+  @include padding-margin(50px 30% 80px 30%, 0);
   background: $charcoal;
   color: white;
-  height: 100vh;
+  height: 100%;
   width: 100%;
   .header-3 {
     margin: 0;

@@ -1,8 +1,9 @@
 import React from 'react';
 import Image from '../Image/Image';
 import Icon from '../Icon/Icon';
-import logo from '../../assets/small-logo.svg'
-import person from '../../assets/person.svg'
+import logo from '../../assets/small-logo.svg';
+import person from '../../assets/person.svg';
+import { Link } from 'react-router-dom';
 
 const Header = () => (
   <header className="header">
@@ -11,13 +12,13 @@ const Header = () => (
         <li className="header__nav-list-item header__logo">
           <Image src={logo} />
         </li>
-        <li className="header__nav-list-item"><h2 className="header-3"><a href="/org-details">Org Details</a></h2></li>
-        <li className="header__nav-list-item"><h2 className="header-3"><a href="/grants">Grants</a></h2></li>
-        <li className="header__nav-list-item"><h2 className="header-3"><a href="/data">Data</a></h2></li>
+        <li className="header__nav-list-item"><h2 className="header-3"><Link to={"/org-details"}>Org Details</Link></h2></li>
+        <li className="header__nav-list-item"><h2 className="header-3"><Link to={"/grants"}>Grants</Link></h2></li>
+        <li className="header__nav-list-item"><h2 className="header-3"><Link to={"/data"}>Data</Link></h2></li>
         <li className="header__nav-list-item header__account-icon">
-          <a href="/account">
+          <Link to={"/account"}>
             <p className="paragraph">Sarah Hamdi</p> <Icon type={person}/>
-          </a>
+          </Link>
         </li>
       </ul>
     </nav>

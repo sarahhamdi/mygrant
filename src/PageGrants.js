@@ -13,8 +13,11 @@ import GrantCard from './components/GrantCard/GrantCard';
 class PageGrants extends React.Component {
   state = {
     grants: [],
-    visible: false,
-    updated: false
+    visibleForm: false,
+    visibleGrant: false,
+    updated: false,
+    tag: null,
+    
   }
 
   refresh = () => {
@@ -47,14 +50,14 @@ class PageGrants extends React.Component {
   showForm = e => {
     e.preventDefault();
     this.setState({
-      visible: true
+      visibleForm: true
     })
   }
 
   hideForm = e => {
     e.preventDefault();
     this.setState({
-      visible: false
+      visibleForm: false
     }) 
     this.refresh();
   }
@@ -66,7 +69,7 @@ class PageGrants extends React.Component {
   render() {
     return (
       <main className="page__grants">
-        {this.state.visible ?
+        {this.state.visibleForm ?
           <FormGrant name="form-grants" id="form-grants" hideForm={this.hideForm} update={this.update}/>
           : <React.Fragment>
               <Header />
@@ -81,9 +84,12 @@ class PageGrants extends React.Component {
                 <Paragraph extraClass="page__grants__number" text={this.state.grants.filter(grant => grant.status === 4).length} />
                 <H3 extraClass="page__grants__stat" text="Denied" />
                 <Paragraph extraClass="page__grants__number" text={this.state.grants.filter(grant => grant.status === 3).length} />
-
+                
                 <H2 text="Upcoming Grants" />
-                {this.state.grants.map(grant => (
+                {this.state.tag ? 
+                  null
+                
+                  : this.state.grants.map(grant => (
                     <GrantCard 
                       key={grant._id}
                       id={grant._id}
@@ -96,7 +102,8 @@ class PageGrants extends React.Component {
                       due={grant.due}
                       status={grant.status} 
                       action={this.update} />
-                ))}
+                    ))
+              }
               </section>
             </React.Fragment>}
       </main>

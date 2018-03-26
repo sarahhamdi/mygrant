@@ -328,11 +328,11 @@ button {
   width: 100%; }
 
 .form--grant {
-  padding: 50px 30%;
+  padding: 50px 30% 80px 30%;
   margin: 0;
   background: #242424;
   color: white;
-  height: 100vh;
+  height: 100%;
   width: 100%; }
   .form--grant .header-3 {
     margin: 0; }
@@ -371,7 +371,7 @@ button {
     margin: 0 0 10px 0; }
 
 .form--org-info {
-  padding: 50px 30%;
+  padding: 50px 30% 80px 30%;
   margin: 0;
   background: #242424;
   color: white;
