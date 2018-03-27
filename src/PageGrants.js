@@ -17,7 +17,8 @@ class PageGrants extends React.Component {
     visibleGrant: false,
     updated: false,
     tag: null,
-    
+    tagArray: [],
+    banana: "apple"
   }
 
   refresh = () => {
@@ -32,12 +33,26 @@ class PageGrants extends React.Component {
     axios
     .get('/grants')
     .then(res => {
-      console.log(res.data.payload)
       const grants = res.data.payload;
+      this.uniqueTagArray(grants)
       this.setState({
         grants
       })
     });
+  }
+
+  uniqueTagArray = data => {
+    let tagArray = []
+    data
+      .map(grant => (grant.tags)
+        .map(tag => 
+          tagArray.push(tag)
+        )
+      )
+    let tagArrayNoDupes = Array.from(new Set(tagArray))
+    this.setState({
+      tagArray: tagArrayNoDupes
+    })
   }
 
   update = () => {
@@ -61,6 +76,18 @@ class PageGrants extends React.Component {
     }) 
     this.refresh();
   }
+
+  showGrant = () => {
+    this.setState({
+      visibleGrant: true
+    }) 
+  }
+
+  hideGrant = () => {
+    this.setState({
+      visibleGrant: false
+    }) 
+  }
     
   componentDidMount() { 
     this.refresh();
@@ -83,13 +110,38 @@ class PageGrants extends React.Component {
                 <H3 extraClass="page__grants__stat" text="Granted" />
                 <Paragraph extraClass="page__grants__number" text={this.state.grants.filter(grant => grant.status === 4).length} />
                 <H3 extraClass="page__grants__stat" text="Denied" />
-                <Paragraph extraClass="page__grants__number" text={this.state.grants.filter(grant => grant.status === 3).length} />
+                <Paragraph extraClass="page__grants__number" text={this.state.grants.filter(grant => grant.status === 3).length} />                
+        
                 
+                
+
+                <div className="grant-card__tags">
+                {this.state.tagArray.map(tag => <span className={`grant-card__tag ${this.state.banana}`} onClick={() => this.setState({tag, banana: "banana"})}>{tag}</span>)}
+                </div>
+
                 <H2 text="Upcoming Grants" />
                 {this.state.tag ? 
-                  null
-                
-                  : this.state.grants.map(grant => (
+                  
+                  // if tag selected, render all the grants with the selected tag
+                  this.state.grants
+                    .filter(grant => grant.tags.includes(this.state.tag))
+                    .map(grant => 
+                      <GrantCard 
+                      key={grant._id}
+                      id={grant._id}
+                      name={grant.name}
+                      issuer={grant.issuer}
+                      tags={grant.tags}
+                      amount={grant.amount}
+                      grantlink={grant.grantLink}
+                      granted={grant.granted}
+                      due={grant.due}
+                      status={grant.status} 
+                      action={this.update} />
+                    )
+                    
+                    // else render all the grants in general
+                  : this.state.grants.map(grant => 
                     <GrantCard 
                       key={grant._id}
                       id={grant._id}
@@ -102,8 +154,8 @@ class PageGrants extends React.Component {
                       due={grant.due}
                       status={grant.status} 
                       action={this.update} />
-                    ))
-              }
+                    )
+                }
               </section>
             </React.Fragment>}
       </main>

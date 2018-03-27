@@ -43,7 +43,7 @@ class GrantCard extends React.Component {
           onClick={this.delete}>delete</button>
         <button 
           className="grant-card__button" 
-          onClick={this.save}>edit</button>
+          onClick={this.save}>view</button>
       </div>
       </React.Fragment>
     )
