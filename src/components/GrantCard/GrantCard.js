@@ -27,15 +27,15 @@ class GrantCard extends React.Component {
       <div className="grant-card">
         <H3 extraClass="grant-card__name" text={name} />
         <Paragraph extraClass="grant-card__issuer" text={issuer} />
-        <Paragraph extraClass="grant-card__link" text={<a href={grantlink} target="_blank">Grant Link</a>} />
+        {/* <Paragraph extraClass="grant-card__link" text={<a href={grantlink} target="_blank">Grant Link</a>} /> */}
         <div className="grant-card__tags">
           {tags.map(tag => (
             <span className="grant-card__tag">{tag}</span>
           ))}
         </div>
         <span className="grant-card__amount">{amount}</span>
-        <Paragraph extraClass="grant-card__date" text={due} />
         <Paragraph extraClass="grant-card__status" text={this.state.status[status - 1]} />
+        <Paragraph extraClass="grant-card__date" text={due} />
       </div>
       <div className="grant-card__buttons">
         <button 

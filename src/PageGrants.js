@@ -130,10 +130,10 @@ class PageGrants extends React.Component {
                       key={grant._id}
                       id={grant._id}
                       name={grant.name}
-                      issuer={grant.issuer}
+                      // issuer={grant.issuer}
                       tags={grant.tags}
                       amount={grant.amount}
-                      grantlink={grant.grantLink}
+                      // grantlink={grant.grantLink}
                       granted={grant.granted}
                       due={grant.due}
                       status={grant.status} 
@@ -146,10 +146,10 @@ class PageGrants extends React.Component {
                       key={grant._id}
                       id={grant._id}
                       name={grant.name}
-                      issuer={grant.issuer}
+                      // issuer={grant.issuer}
                       tags={grant.tags}
                       amount={grant.amount}
-                      grantlink={grant.grantLink}
+                      // grantlink={grant.grantLink}
                       granted={grant.granted}
                       due={grant.due}
                       status={grant.status} 

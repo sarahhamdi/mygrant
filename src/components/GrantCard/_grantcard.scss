@@ -47,13 +47,13 @@
     // height: fit-content;
   }
   &__status {
-    grid-column: 11 / span 2;
-    text-align: right;
+    grid-column: span 2;
+    text-align: center;
     font-size: 12px;
     margin: 0;
   }
   &__date {
-    grid-column: 9 / span 2;
+    grid-column: span 2;
     text-align: center;
     font-size: 12px;
     margin: 0;
