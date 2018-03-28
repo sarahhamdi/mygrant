@@ -9,6 +9,7 @@ import Header from './components/Header/Header';
 import ButtonWithIcon from './components/ButtonWithIcon/ButtonWithIcon';
 import FormGrant from './components/FormGrant/FormGrant';
 import GrantCard from './components/GrantCard/GrantCard';
+import Tags from './components/Tags/Tags'
 
 class PageGrants extends React.Component {
   state = {
@@ -18,7 +19,7 @@ class PageGrants extends React.Component {
     updated: false,
     tag: null,
     tagArray: [],
-    banana: "apple"
+    class: null
   }
 
   refresh = () => {
@@ -39,6 +40,10 @@ class PageGrants extends React.Component {
         grants
       })
     });
+  }
+
+  filterTags = tag => {
+    this.setState({ tag })
   }
 
   uniqueTagArray = data => {
@@ -111,13 +116,7 @@ class PageGrants extends React.Component {
                 <Paragraph extraClass="page__grants__number" text={this.state.grants.filter(grant => grant.status === 4).length} />
                 <H3 extraClass="page__grants__stat" text="Denied" />
                 <Paragraph extraClass="page__grants__number" text={this.state.grants.filter(grant => grant.status === 3).length} />                
-        
-                
-                
-
-                <div className="grant-card__tags">
-                {this.state.tagArray.map(tag => <span className={`grant-card__tag ${this.state.banana}`} onClick={() => this.setState({tag, banana: "banana"})}>{tag}</span>)}
-                </div>
+                <Tags data={this.state.tagArray} action={this.filterTags}/>
 
                 <H2 text="Upcoming Grants" />
                 {this.state.tag ? 
