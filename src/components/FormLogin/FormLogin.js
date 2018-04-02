@@ -3,14 +3,14 @@ import InputText from '../InputText/InputText';
 import Button from '../Button/Button';
 import { Link } from 'react-router-dom';
 
-const FormLogin= ({ name, id, action }) => (
-  <form name={name} id={id} method="post" className="form--login" onSubmit={() => action()}>
+const FormLogin= ({ name, id, postUser }) => (
+  <form name={name} id={id} method="post" className="form--login" onSubmit={() => postUser()}>
     <InputText 
       type="email"
       name="Your Email" 
       placeholder="example@email.com" 
       label="Your Email" 
-      pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/"
+      // pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/"
       id="registration--input-nemail"/>
     <InputText 
       type="password"

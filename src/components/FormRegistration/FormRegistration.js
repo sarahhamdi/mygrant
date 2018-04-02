@@ -21,7 +21,7 @@ class FormRegistration extends React.Component {
   postNewUser = () => {
     const { firstName, lastName, email, password, organization } = this.state;
     axios
-      .post('/users', { firstName, lastName, email, password, organization })
+      .post('/auth/register', { firstName, lastName, email, password, organization })
       .then(res => {
         console.log(res)
       })
