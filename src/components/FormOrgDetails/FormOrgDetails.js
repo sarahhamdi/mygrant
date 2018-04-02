@@ -20,7 +20,7 @@ class FormOrgInfo extends React.Component {
     e.preventDefault();
     const { title, text } = this.state;
     axios
-      .post('/org-details', { title, text })
+      .post('/org-details/new', { title, text })
       .then(res => {
         console.log(res)
         this.props.hideForm(e);

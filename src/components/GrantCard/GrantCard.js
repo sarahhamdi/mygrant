@@ -13,7 +13,7 @@ class GrantCard extends React.Component {
   delete = () => {
     const { id } = this.state;
     axios
-    .delete(`/grants/${id}`)
+    .delete(`/grants/delete/${id}`)
     .then(res => {
       console.log(res.data.payload)
       this.props.action();

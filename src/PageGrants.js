@@ -32,7 +32,7 @@ class PageGrants extends React.Component {
     // AND because you may not be using that port all the time
     // use a proxy! add "proxy": "http://localhost:8080" to package.json
     axios
-    .get('/grants')
+    .get('/grants/all')
     .then(res => {
       const grants = res.data.payload;
       this.uniqueTagArray(grants)

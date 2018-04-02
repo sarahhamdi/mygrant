@@ -16,7 +16,7 @@ class PageOrgDetails extends React.Component {
 
   refresh = () => {
     axios
-    .get('/org-details')
+    .get('/org-details/all')
     .then(res => {
       console.log(res.data.payload)
       const details = res.data.payload;

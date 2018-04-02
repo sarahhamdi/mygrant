@@ -51,7 +51,7 @@ class OrgDetail extends React.Component {
   delete = () => {
     const { id } = this.state;
     axios
-    .delete(`/org-details/${id}`)
+    .delete(`/org-details/delete/${id}`)
     .then(res => {
       console.log(res.data.payload)
       this.props.action();

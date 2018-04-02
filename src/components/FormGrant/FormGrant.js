@@ -33,7 +33,7 @@ class FormGrant extends React.Component {
     const { name, issuer, amount, due, grantLink, tags, status, granted, notes } = this.state;
 
     axios
-      .post('/grants', { name, issuer, amount, due, grantLink, tags, status, granted, notes })
+      .post('/grants/new', { name, issuer, amount, due, grantLink, tags, status, granted, notes })
       .then(res => {
         console.log(res)
         this.props.hideForm(e);
