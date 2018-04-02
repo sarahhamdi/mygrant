@@ -36,7 +36,7 @@ class App extends React.Component {
     // if they have a token get their deets
     if (token) {
       axios
-        .get('/user/current', {
+        .get('/users/current', {
           // 3. Pass the token as an Authorization Header
           headers: {
             Authorization: `Bearer ${token}`
@@ -71,10 +71,6 @@ class App extends React.Component {
                 : <Redirect to="/login" />
               )} />
             </Switch>
-            <Route path='/grants' component={PageGrants} />
-            <Route path='/org-details' component={PageOrgDetails} />
-            <Route path='/data' component={PageData} />
-            <Route path='/account' component={PageAccount} />
           </React.Fragment>
         </Router>
       )
@@ -82,3 +78,8 @@ class App extends React.Component {
 }
 
 export default App;
+
+// <Route path='/grants' component={PageGrants} />
+// <Route path='/org-details' component={PageOrgDetails} />
+// <Route path='/data' component={PageData} />
+// <Route path='/account' component={PageAccount} />

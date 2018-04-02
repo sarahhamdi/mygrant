@@ -29,7 +29,9 @@ class PageLogin extends React.Component {
       .then(res => {
         if (res.status === 200) {
           console.log(res)
+          // get token
           const token = res.data.payload;
+          // store in localstorage
           setToken(token);
           this.props.getCurrentUser();
         }
