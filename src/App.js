@@ -74,7 +74,7 @@ class App extends React.Component {
             <Route path='/grants' component={PageGrants} />
             <Route path='/org-details' component={PageOrgDetails} />
             <Route path='/data' component={PageData} />
-            <Route path='/account' component={PageAccount} />
+            <Route path='/account' render={(props) => <PageAccount setUser={this.setUser} />} />
           </React.Fragment>
           
         </Router>
