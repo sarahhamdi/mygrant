@@ -38,7 +38,7 @@ class OrgDetail extends React.Component {
       disabled: true
     })
     axios
-      .patch('/org-details', { title, text, id })
+      .patch('/org-details/fix', { title, text, id })
       .then(res => {
         console.log(res)
         this.props.action();

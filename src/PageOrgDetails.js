@@ -1,11 +1,13 @@
 import React from 'react';
 import axios from 'axios';
+import { getToken } from './services/tokenService';
 
 import addLight from './assets/icon-add-light.svg';
 import Header from './components/Header/Header';
 import ButtonWithIcon from './components/ButtonWithIcon/ButtonWithIcon';
 import FormOrgDetails from './components/FormOrgDetails/FormOrgDetails';
 import OrgDetail from './components/OrgDetail/OrgDetail';
+
 
 class PageOrgDetails extends React.Component {
   state = {
@@ -15,14 +17,22 @@ class PageOrgDetails extends React.Component {
   }
 
   refresh = () => {
+    const token = getToken();
+    console.log(token)
     axios
-    .get('/org-details/all')
+    .get('/org-details/all', {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
     .then(res => {
-      console.log(res.data.payload)
-      const details = res.data.payload;
-      this.setState({
-        details
-      })
+      if (res.status === 200) {
+        console.log(res.data.payload)
+        const details = res.data.payload;
+        this.setState({
+          details
+        })
+      }
     });
   }
 
@@ -58,6 +68,18 @@ class PageOrgDetails extends React.Component {
 
   componentDidMount() {
     this.refresh();
+    // const token = getToken();
+    // axios
+    //   .get('/org-details/all', {
+    //     Authorization: `Bearer ${token}`
+    //   })
+    //   .then(res => {
+    //     if (res.status === 200) {
+    //       const details = res.data.payload;
+    //       console.log(details)
+    //       this.setState({ details })
+    //     }
+    //   })
   }
 
   render() {

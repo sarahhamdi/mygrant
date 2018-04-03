@@ -3,6 +3,7 @@ import InputText from '../InputText/InputText'
 import InputTextArea from '../InputTextArea/InputTextArea'
 import Button from '../Button/Button'
 import axios from "axios"
+import { getToken } from '../../services/tokenService';
 
 class FormOrgInfo extends React.Component {
   state = { 
@@ -19,8 +20,13 @@ class FormOrgInfo extends React.Component {
   postNewOrgDetail = e => {
     e.preventDefault();
     const { title, text } = this.state;
+    const token = getToken();
     axios
-      .post('/org-details/new', { title, text })
+      .post('/org-details/new', 
+        { title, text },
+        { headers: {
+            Authorization: `Bearer ${token}`
+        }})
       .then(res => {
         console.log(res)
         this.props.hideForm(e);

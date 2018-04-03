@@ -71,9 +71,7 @@ class App extends React.Component {
                 : <Redirect to="/login" />
               )} />
             </Switch>
-            <Route path='/grants' component={PageGrants} />
-            <Route path='/org-details' component={PageOrgDetails} />
-            <Route path='/data' component={PageData} />
+
             <Route path='/account' render={(props) => <PageAccount setUser={this.setUser} />} />
           </React.Fragment>
           
@@ -84,3 +82,6 @@ class App extends React.Component {
 
 export default App;
 
+// <Route path='/grants' component={PageGrants} />
+// <Route path='/org-details' component={PageOrgDetails} />
+// <Route path='/data' component={PageData} />
