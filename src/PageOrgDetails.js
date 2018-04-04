@@ -68,18 +68,6 @@ class PageOrgDetails extends React.Component {
 
   componentDidMount() {
     this.refresh();
-    // const token = getToken();
-    // axios
-    //   .get('/org-details/all', {
-    //     Authorization: `Bearer ${token}`
-    //   })
-    //   .then(res => {
-    //     if (res.status === 200) {
-    //       const details = res.data.payload;
-    //       console.log(details)
-    //       this.setState({ details })
-    //     }
-    //   })
   }
 
   render() {

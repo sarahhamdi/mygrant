@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 
+import { getToken } from './services/tokenService';
+
 import addLight from './assets/icon-add-light.svg';
 import H2 from './components/H2/H2';
 import H3 from './components/H3/H3';
@@ -9,7 +11,7 @@ import Header from './components/Header/Header';
 import ButtonWithIcon from './components/ButtonWithIcon/ButtonWithIcon';
 import FormGrant from './components/FormGrant/FormGrant';
 import GrantCard from './components/GrantCard/GrantCard';
-import Tags from './components/Tags/Tags'
+import Tags from './components/Tags/Tags';
 
 class PageGrants extends React.Component {
   state = {
@@ -23,6 +25,7 @@ class PageGrants extends React.Component {
   }
 
   refresh = () => {
+    const token = getToken();
     // axios is a promise-based api
     // so you can chain .then and use callback for response
     // make sure you on the CORRECT PORT (ie not 3000)
@@ -32,7 +35,11 @@ class PageGrants extends React.Component {
     // AND because you may not be using that port all the time
     // use a proxy! add "proxy": "http://localhost:8080" to package.json
     axios
-    .get('/grants/all')
+    .get('/grants/all', {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
     .then(res => {
       const grants = res.data.payload;
       this.uniqueTagArray(grants)
@@ -60,12 +67,12 @@ class PageGrants extends React.Component {
     })
   }
 
-  update = () => {
-    this.setState({
-      updated: true
-    })
-    this.refresh();
-  }
+  // update = () => {
+  //   this.setState({
+  //     updated: true
+  //   })
+  //   this.refresh();
+  // }
 
   showForm = e => {
     e.preventDefault();
@@ -102,7 +109,7 @@ class PageGrants extends React.Component {
     return (
       <main className="page__grants">
         {this.state.visibleForm ?
-          <FormGrant name="form-grants" id="form-grants" hideForm={this.hideForm} update={this.update}/>
+          <FormGrant name="form-grants" id="form-grants" hideForm={this.hideForm} update={this.refresh}/>
           : <React.Fragment>
               <Header />
               <section className="page__grants__container">

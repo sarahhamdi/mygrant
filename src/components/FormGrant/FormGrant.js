@@ -1,9 +1,12 @@
 import React from 'react';
+import axios from "axios";
+
 import InputText from '../InputText/InputText';
 import InputTextArea from '../InputTextArea/InputTextArea';
 import Button from '../Button/Button';
 import Paragraph from '../Paragraph/Paragraph';
-import axios from "axios";
+
+import { getToken } from '../../services/tokenService';
 
 class FormGrant extends React.Component {
   state = {
@@ -26,18 +29,27 @@ class FormGrant extends React.Component {
   };
 
   postNewGrant = e => {
+    const { name, issuer, amount, due, grantLink, tags, status, granted, notes } = this.state;
+    const token = getToken();
+    const { hideForm, refresh } = this.props;
+
     e.preventDefault();
     this.setState({
       tags: this.state.tags[0].split(",")
     })
-    const { name, issuer, amount, due, grantLink, tags, status, granted, notes } = this.state;
 
     axios
-      .post('/grants/new', { name, issuer, amount, due, grantLink, tags, status, granted, notes })
+      .post('/grants/new', 
+        { name, issuer, amount, due, grantLink, tags, status, granted, notes },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        })
       .then(res => {
         console.log(res)
-        this.props.hideForm(e);
-        this.props.update();
+        hideForm(e);
+        refresh();
       })
       .catch(err => {
         console.log(err)
@@ -104,7 +116,7 @@ class FormGrant extends React.Component {
         id="grant-notes" 
         handleChange={this.handleChange} />
       {this.state.error ? 
-        <Paragraph extraClass="error" text="There was an error adding this grant. Please make sure <strong>Grant Amount</strong> and <strong>Amount Awarded</strong> are number values, and submit again." />
+        <Paragraph extraClass="error" text={`There was an error adding this grant. Please make sure <strong>Grant Amount</strong> and <strong>Amount Awarded</strong> are number values, and submit again.`} />
         : null}
       <Button text="Save" />
     </form>

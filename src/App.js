@@ -73,6 +73,7 @@ class App extends React.Component {
             </Switch>
 
             <Route path='/account' render={(props) => <PageAccount setUser={this.setUser} />} />
+            <Route path='/grants' component={PageGrants} />
           </React.Fragment>
           
         </Router>
