@@ -49,7 +49,7 @@ class FormGrant extends React.Component {
       .then(res => {
         console.log(res)
         hideForm(e);
-        refresh();
+        refresh;
       })
       .catch(err => {
         console.log(err)

@@ -58,7 +58,9 @@ class App extends React.Component {
         <Router className="App">
           <React.Fragment>
             <Switch>
-              <Route exact path='/login' render={() => (
+              <Route 
+              exact path='/login' 
+              render={() => (
                 this.state.user ? <Redirect to="/" />
                 : <PageLogin getCurrentUser={this.getCurrentUser}/>
               )} />
@@ -70,10 +72,26 @@ class App extends React.Component {
                 this.state.user ? <PageOrgDetails setUser={this.setUser} />
                 : <Redirect to="/login" />
               )} />
+              <Route path='/data' render={() => (
+                this.state.user ? <PageData />
+                  : <Redirect to="/login" />
+                )} />
+              <Route path='/org-details' render={() => (
+                this.state.user ? <PageOrgDetails setUser={this.setUser} />
+                : <Redirect to="/login" />
+              )} />
+              <Route path='/grants' render={() => (
+                this.state.user ? <PageGrants setUser={this.setUser} />
+                : <Redirect to="/login" />
+              )} />
+              <Route path='/account' render={() => (
+                this.state.user ? <PageAccount setUser={this.setUser} />
+                : <Redirect to="/login" />
+              )} />
             </Switch>
-
-            <Route path='/account' render={(props) => <PageAccount setUser={this.setUser} />} />
-            <Route path='/grants' component={PageGrants} />
+            
+          
+            
           </React.Fragment>
           
         </Router>
@@ -86,3 +104,6 @@ export default App;
 // <Route path='/grants' component={PageGrants} />
 // <Route path='/org-details' component={PageOrgDetails} />
 // <Route path='/data' component={PageData} />
+
+// {this.state.user ? <Route path='/account' render={(props) => <PageAccount setUser={this.setUser} />} /> : <}
+// {this.state.user && <Route path='/org-details' component={PageGrants} />}
