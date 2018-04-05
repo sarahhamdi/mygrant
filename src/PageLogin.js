@@ -42,27 +42,32 @@ class PageLogin extends React.Component {
   render() {
    return (
       <main className="page__login">
-        <Image src={logo} />
-        <form className="form--login" onSubmit={this.postUser}>
-          <InputText 
-            type="email"
-            name="email" 
-            placeholder="example@email.com" 
-            label="Your Email" 
-            // pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/"
-            id="registration--input-nemail"
-            handleChange={this.handleChange} />
-          <InputText 
-            type="password"
-            name="password" 
-            placeholder="*******" 
-            label="Your Password" 
-            id="registration--input-password"
-            required="true" 
-            handleChange={this.handleChange} />
-          <Button text="Login"/>
-          <p className="paragraph paragraph--right"><Link to={"/register"}>Not registered? Register here.</Link></p>
-        </form>
+        <section className="page__login__section--1">
+          <Image src={logo} />
+          <form className="form--login" onSubmit={this.postUser}>
+            <InputText 
+              type="email"
+              name="email" 
+              placeholder="example@email.com" 
+              label="Your Email" 
+              // pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/"
+              id="registration--input-nemail"
+              handleChange={this.handleChange} />
+            <InputText 
+              type="password"
+              name="password" 
+              placeholder="*******" 
+              label="Your Password" 
+              id="registration--input-password"
+              required="true" 
+              handleChange={this.handleChange} />
+            <Button text="Login"/>
+            <p className="paragraph paragraph--right"><Link to={"/register"}>Not registered? Register here.</Link></p>
+          </form>
+        </section>
+        <section className="page__login__section--2">
+
+        </section>
       </main>
     )
   }
