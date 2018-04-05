@@ -321,12 +321,6 @@ button {
   .textarea__input::placeholder {
     color: #d3d3d3; }
 
-.form--registration .button {
-  width: 100%; }
-
-.form--login .button {
-  width: 100%; }
-
 .form--grant {
   padding: 50px 30% 80px 30%;
   margin: 0;

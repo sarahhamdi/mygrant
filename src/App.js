@@ -25,9 +25,7 @@ class App extends React.Component {
   }
 
   setUser = user => {
-    this.setState({
-      user
-    })
+    this.setState({ user })
   }
 
   getCurrentUser = () => {
@@ -37,13 +35,13 @@ class App extends React.Component {
     if (token) {
       axios
         .get('/users/current', {
-          // 3. Pass the token as an Authorization Header
+          // Pass the token as an Authorization Header
           headers: {
             Authorization: `Bearer ${token}`
           }
         })
         .then(res => {
-          // 4. If a successful response returns, store the user in state.
+          // If a successful response returns, store the user in state.
           if (res.status === 200) {
             const user = res.data.payload
             this.setUser(user)
@@ -69,7 +67,7 @@ class App extends React.Component {
                 : <PageRegistration setUser={this.setUser} />
               )} />
               <Route exact path='/' render={() => (
-                this.state.user ? <PageOrgDetails setUser={this.setUser} />
+                this.state.user ? <PageOrgDetails />
                 : <Redirect to="/login" />
               )} />
               <Route path='/data' render={() => (
@@ -77,11 +75,11 @@ class App extends React.Component {
                   : <Redirect to="/login" />
                 )} />
               <Route path='/org-details' render={() => (
-                this.state.user ? <PageOrgDetails setUser={this.setUser} />
+                this.state.user ? <PageOrgDetails />
                 : <Redirect to="/login" />
               )} />
               <Route path='/grants' render={() => (
-                this.state.user ? <PageGrants setUser={this.setUser} />
+                this.state.user ? <PageGrants />
                 : <Redirect to="/login" />
               )} />
               <Route path='/account' render={() => (
@@ -89,9 +87,6 @@ class App extends React.Component {
                 : <Redirect to="/login" />
               )} />
             </Switch>
-            
-          
-            
           </React.Fragment>
           
         </Router>
@@ -100,10 +95,3 @@ class App extends React.Component {
 }
 
 export default App;
-
-// <Route path='/grants' component={PageGrants} />
-// <Route path='/org-details' component={PageOrgDetails} />
-// <Route path='/data' component={PageData} />
-
-// {this.state.user ? <Route path='/account' render={(props) => <PageAccount setUser={this.setUser} />} /> : <}
-// {this.state.user && <Route path='/org-details' component={PageGrants} />}
