@@ -62,7 +62,7 @@ class PageLogin extends React.Component {
               required="true" 
               handleChange={this.handleChange} />
             <Button text="Login"/>
-            <p className="paragraph paragraph--right"><Link to={"/register"}>Not registered? Register here.</Link></p>
+            <p className="paragraph paragraph--right"><Link to={"/register"}>No account? Register here.</Link></p>
           </form>
         </section>
         <section className="page__login__section--2">
