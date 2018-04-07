@@ -1,42 +1,62 @@
 .header {
   background: $salmon;
   &__nav-list {
-    
-    @include flexbox (row wrap, space-between, flex-end);
+    @include flexbox (row wrap, flex-start, flex-end);
     @include padding-margin (0, 0 auto);
     list-style: none;
     max-width: 960px;
   }
   &__nav-list-item { 
-    @include padding-margin (40px 30px 16px 30px, 0);
+    @include padding-margin (20px, 0);
     align-self: center;
+    &:hover {
+      padding-bottom: 17px;
+      border-bottom: 3px solid $charcoal;
+      // &:after {
+      //   content: '';
+      //     width: 0;
+      //     height: 0;
+      //     border-left: 5px solid transparent;
+      //     border-right: 5px solid transparent;
+      //     border-bottom: 5px solid black;
+      // }
+      a {
+        color: $charcoal;
+      }
+    }
     .header-3 {
       text-transform: none;
       margin: 0;
     }
     a {
       color: $desert-storm;
-      &:hover {
-        color: white;
-      }
     }
   }
-  .header__logo {
-    @include padding-margin (40px 30px 16px 0, 0);
+}
+
+.header__logo {
+  @include padding-margin (0 0 0 0, 0 120px 0 0);
+  img {
+    width: 130px;
   }
-  .header__account-icon {
-    @include padding-margin (40px 0 16px 30px, 0);
-    a {
-      @include flexbox (row wrap, space-between, center);
-      color: $charcoal;
-    }
-    .paragraph {
-      font-weight: $font-weight--bolder;
-      text-transform: uppercase;
-      font-size: 14px;
-      margin: 0;
-      align-self: center;
-      margin-right: 5px;
-    }
+  &:hover {
+    border: none;
+    padding-bottom: 0;
+  }
+}
+
+.header__account-icon {
+  // @include padding-margin (40px 0 16px 30px, 0);
+  a {
+    @include flexbox (row wrap, flex-start, center);
+    color: $charcoal;
+  }
+  .paragraph {
+    font-weight: $font-weight--bolder;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin: 0;
+    align-self: center;
+    margin-right: 5px;
   }
 }

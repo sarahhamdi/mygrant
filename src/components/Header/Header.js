@@ -14,12 +14,7 @@ const Header = () => (
         </li>
         <li className="header__nav-list-item"><h2 className="header-3"><Link to={"/org-details"}>Org Details</Link></h2></li>
         <li className="header__nav-list-item"><h2 className="header-3"><Link to={"/grants"}>Grants</Link></h2></li>
-        <li className="header__nav-list-item"><h2 className="header-3"><Link to={"/data"}>Data</Link></h2></li>
-        <li className="header__nav-list-item header__account-icon">
-          <Link to={"/account"}>
-            <p className="paragraph">Sarah Hamdi</p> <Icon type={person}/>
-          </Link>
-        </li>
+        <li className="header__nav-list-item"><h2 className="header-3"><Link to={"/account"}>My Account</Link></h2></li>
       </ul>
     </nav>
   </header>

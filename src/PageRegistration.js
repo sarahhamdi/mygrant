@@ -46,14 +46,14 @@ class PageRegistration extends React.Component {
             <InputText 
               type="text"
               name="firstName" 
-              placeholder="Severus Snape" 
+              placeholder="Severus" 
               label="Your First Name" 
               id="registration--input-name-1"
               handleChange={this.handleChange} />
             <InputText 
               type="text"
               name="lastName" 
-              placeholder="Severus Snape" 
+              placeholder="Snape" 
               label="Your Last Name" 
               id="registration--input-name-2"
               handleChange={this.handleChange} />

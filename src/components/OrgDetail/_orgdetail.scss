@@ -1,5 +1,5 @@
 .org-detail {
-  @include padding-margin(0, 0 0 40px 0);
+  @include padding-margin(0, 0 0 60px 0);
   // buttons
   &__button-container {
     @include flexbox(row wrap, flex-end, inherit);
@@ -7,13 +7,16 @@
   }
   &__button {
     @include fontSize(12);
-    @include padding-margin(5px 10px, 0 10px 0 0);
-    background: $charcoal;    
-    border: none;
+    @include padding-margin(5px 10px, 0 10px 0 0);  
     height: 30px;
     letter-spacing: 1px;
+    background: white;
+    color: $aluminium;
+    border: 1px solid $aluminium;
+    // border-bottom: 3px solid $salmon;
     &:hover {
       background: $aluminium;
+      color: white;
     }
   }
   // inline form
