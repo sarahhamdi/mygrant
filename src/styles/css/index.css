@@ -564,7 +564,7 @@ button {
     margin-left: calc(100% - 210px); }
 
 .org-details__index {
-  padding: 155px 20px 0 0;
+  padding: 155px 20px 100px 0;
   margin: 0 0 0 0;
   list-style: none;
   position: relative;
@@ -606,19 +606,21 @@ button {
   .page__grants__container .grant-card {
     grid-column: span 11; }
 
-.page__grants__stat, .page__grants__stat--total {
-  grid-column: span 2;
-  margin: 0;
-  font-size: 14px; }
-.page__grants__number, .page__grants__number--total {
-  margin: 0 0 30px 0;
-  grid-row: 3;
-  grid-column: span 2;
-  font-size: 40px;
-  font-weight: 600;
-  line-height: 1; }
-.page__grants__number--total, .page__grants__stat--total {
-  grid-column: span 3; }
+.page__grants {
+  margin-bottom: 100px; }
+  .page__grants__stat, .page__grants__stat--total {
+    grid-column: span 2;
+    margin: 0;
+    font-size: 14px; }
+  .page__grants__number, .page__grants__number--total {
+    margin: 0 0 30px 0;
+    grid-row: 3;
+    grid-column: span 2;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 1; }
+  .page__grants__number--total, .page__grants__stat--total {
+    grid-column: span 3; }
 
 html {
   font-size: 62.5%; }
