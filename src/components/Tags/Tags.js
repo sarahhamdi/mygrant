@@ -1,9 +1,10 @@
 import React from 'react';
 
-const Tags = ({ data, action }) => (
-  <div className="grant-card__tags">
+const Tags = ({ data, filterTags }) => (
+  <div className="grant__tags">
+    <span className={`grant-card__tag`} onClick={() => filterTags(null)}>All</span>
     {data.map(tag => 
-      <span className={`grant-card__tag`} onClick={() => action(tag)}>{tag}</span>)}
+      <span className={`grant-card__tag`} onClick={() => filterTags(tag)}>{tag}</span>)}
   </div>
 )
 

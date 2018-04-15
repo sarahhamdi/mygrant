@@ -123,7 +123,7 @@ class PageGrants extends React.Component {
                 <Paragraph extraClass="page__grants__number" text={this.state.grants.filter(grant => grant.status === 4).length} />
                 <H3 extraClass="page__grants__stat" text="Denied" />
                 <Paragraph extraClass="page__grants__number" text={this.state.grants.filter(grant => grant.status === 3).length} />                
-                <Tags data={this.state.tagArray} action={this.filterTags}/>
+                <Tags data={this.state.tagArray} filterTags={this.filterTags}/>
 
                 <H2 text="Upcoming Grants" />
                 {this.state.tag ? 
@@ -143,7 +143,7 @@ class PageGrants extends React.Component {
                       granted={grant.granted}
                       due={grant.due}
                       status={grant.status} 
-                      action={this.update} />
+                      action={this.refresh} />
                     )
                     
                     // else render all the grants in general
@@ -159,7 +159,7 @@ class PageGrants extends React.Component {
                       granted={grant.granted}
                       due={grant.due}
                       status={grant.status} 
-                      action={this.update} />
+                      action={this.refresh} />
                     )
                 }
               </section>

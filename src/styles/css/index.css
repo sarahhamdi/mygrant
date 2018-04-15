@@ -512,6 +512,11 @@ button {
     .grant-card__button:hover {
       background: #9b9b9b; }
 
+.grant__tags {
+  grid-column: span 3; }
+  .grant__tags .grant-card__tag {
+    cursor: pointer; }
+
 .page__login,
 .page__registration {
   display: grid;

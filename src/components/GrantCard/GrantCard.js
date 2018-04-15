@@ -20,6 +20,12 @@ class GrantCard extends React.Component {
     });
   }
  
+  formatLargeNumbers = (n) => {
+
+    console.log(n.toLocaleString())    
+ 
+  }
+
   render() {
     const { name, issuer, tags, amount, grantlink, due, status } = this.props;
     return (
@@ -33,7 +39,8 @@ class GrantCard extends React.Component {
             <span className="grant-card__tag">{tag}</span>
           ))}
         </div>
-        <span className="grant-card__amount">{amount}</span>
+        {/* uses toLocalString() to format money by locale */}
+        <span className="grant-card__amount">{amount.toLocaleString('en-CA', { style: 'currency', currency: 'CAD'})}</span>
         <Paragraph extraClass="grant-card__status" text={this.state.status[status - 1]} />
         <Paragraph extraClass="grant-card__date" text={due} />
       </div>
