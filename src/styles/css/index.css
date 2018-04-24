@@ -476,12 +476,14 @@ button {
     grid-row: 2; }
   .grant-card__link {
     grid-row: 3; }
-  .grant-card__tag, .grant-card__amount {
+  .grant-card__tag, .grant__tags .grant-card__tag--selected, .grant-card__amount {
     padding: 3px 10px;
     margin: 2px;
     background: #fef2ee;
     font-size: 12px;
     height: fit-content; }
+  .grant-card__tag, .grant__tags .grant-card__tag--selected {
+    cursor: pointer; }
   .grant-card__tags {
     grid-column: span 3;
     display: flex;
@@ -490,7 +492,9 @@ button {
     align-content: flex-start; }
   .grant-card__amount {
     background: white;
-    border: 1px solid #fef2ee; }
+    border: 1px solid #fef2ee;
+    grid-column: span 2;
+    text-align: right; }
   .grant-card__status {
     grid-column: span 2;
     text-align: center;
@@ -513,9 +517,14 @@ button {
       background: #9b9b9b; }
 
 .grant__tags {
-  grid-column: span 3; }
-  .grant__tags .grant-card__tag {
-    cursor: pointer; }
+  grid-column: span 3;
+  grid-row: span 2; }
+  .grant__tags .grant-card__tag, .grant__tags .grant-card__tag--selected {
+    cursor: pointer;
+    display: inline-block;
+    height: auto; }
+    .grant__tags .grant-card__tag--selected {
+      background: #fdbdb3; }
 
 .page__login,
 .page__registration {

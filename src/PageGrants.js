@@ -21,6 +21,7 @@ class PageGrants extends React.Component {
     updated: false,
     tag: null,
     tagArray: [],
+    formatTagArray: [],
     class: null
   }
 
@@ -55,13 +56,10 @@ class PageGrants extends React.Component {
 
   uniqueTagArray = data => {
     let tagArray = []
-    data
-      .map(grant => (grant.tags)
-        .map(tag => 
-          tagArray.push(tag)
-        )
-      )
+    data.map(grant => (grant.tags).map(tag => tagArray.push(tag)))
+    console.log(tagArray);
     let tagArrayNoDupes = Array.from(new Set(tagArray))
+    
     this.setState({
       tagArray: tagArrayNoDupes
     })
@@ -122,8 +120,10 @@ class PageGrants extends React.Component {
                 <H3 extraClass="page__grants__stat" text="Granted" />
                 <Paragraph extraClass="page__grants__number" text={this.state.grants.filter(grant => grant.status === 4).length} />
                 <H3 extraClass="page__grants__stat" text="Denied" />
-                <Paragraph extraClass="page__grants__number" text={this.state.grants.filter(grant => grant.status === 3).length} />                
-                <Tags data={this.state.tagArray} filterTags={this.filterTags}/>
+                <Paragraph extraClass="page__grants__number" text={this.state.grants.filter(grant => grant.status === 3).length} /> 
+                
+                
+                <Tags data={this.state.tagArray} filterTags={this.filterTags} selected={this.state.tag}/>
 
                 <H2 text="Upcoming Grants" />
                 {this.state.tag ? 
@@ -143,7 +143,8 @@ class PageGrants extends React.Component {
                       granted={grant.granted}
                       due={grant.due}
                       status={grant.status} 
-                      action={this.refresh} />
+                      action={this.refresh} 
+                      filterTags={this.filterTags} />
                     )
                     
                     // else render all the grants in general
@@ -159,7 +160,8 @@ class PageGrants extends React.Component {
                       granted={grant.granted}
                       due={grant.due}
                       status={grant.status} 
-                      action={this.refresh} />
+                      action={this.refresh}
+                      filterTags={this.filterTags} />
                     )
                 }
               </section>

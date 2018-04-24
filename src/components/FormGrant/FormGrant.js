@@ -15,7 +15,7 @@ class FormGrant extends React.Component {
     amount: Number,
     due: '',
     grantLink: '',
-    tags: '',
+    tags: [],
     status: Number,
     granted: Number,
     notes: '',
@@ -26,17 +26,25 @@ class FormGrant extends React.Component {
     this.setState({
       [e.target.name]: e.target.value
     });
+    // if this form field is the 'tags' one
+    // format the tags and setstate to tags
+    e.target.name === 'tags' && this.setState({ tags: this.formatTags(e.target.value) })
   };
 
+  formatTags = tags => {
+    let tagArray = []
+    tagArray.push(tags)
+    let splitTagArray = tagArray.map(tag => tag.split(", "));
+    let flattenedArray = [].concat.apply([], splitTagArray);
+    let tagArrayNoDupes = Array.from(new Set(flattenedArray))   
+    return tagArrayNoDupes;
+  }
+
   postNewGrant = e => {
+    e.preventDefault();
     const { name, issuer, amount, due, grantLink, tags, status, granted, notes } = this.state;
     const token = getToken();
     const { hideForm, refresh } = this.props;
-
-    e.preventDefault();
-    this.setState({
-      tags: this.state.tags[0].split(",")
-    })
 
     axios
       .post('/grants/new', 

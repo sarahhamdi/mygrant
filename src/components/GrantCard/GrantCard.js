@@ -7,7 +7,7 @@ import Paragraph from '../Paragraph/Paragraph';
 class GrantCard extends React.Component {
   state = {
     status: ['Not Yet Applied', 'Applied', 'Denied', 'Granted'],
-    id: this.props.id
+    id: this.props.id,
   }
 
   delete = () => {
@@ -19,15 +19,19 @@ class GrantCard extends React.Component {
       this.props.action();
     });
   }
- 
-  formatLargeNumbers = (n) => {
 
-    console.log(n.toLocaleString())    
- 
-  }
+  // formatAndDisplayTags = (tags) => (
+  //   tags.map(tag => (
+  //     tag
+  //       .split(", ")
+  //       .map(singleTag => (
+  //         <span className="grant-card__tag">{singleTag}</span>
+  //       ))
+  //   ))
+  // )
 
   render() {
-    const { name, issuer, tags, amount, grantlink, due, status } = this.props;
+    const { name, issuer, tags, amount, grantlink, due, status, filterTags } = this.props;
     return (
       <React.Fragment>
       <div className="grant-card">
@@ -35,9 +39,9 @@ class GrantCard extends React.Component {
         <Paragraph extraClass="grant-card__issuer" text={issuer} />
         {/* <Paragraph extraClass="grant-card__link" text={<a href={grantlink} target="_blank">Grant Link</a>} /> */}
         <div className="grant-card__tags">
-          {tags.map(tag => (
-            <span className="grant-card__tag">{tag}</span>
-          ))}
+          {tags.map(tag => 
+            <span className="grant-card__tag" onClick={() => filterTags(tag)}>{tag}</span>
+          )}
         </div>
         {/* uses toLocalString() to format money by locale */}
         <span className="grant-card__amount">{amount.toLocaleString('en-CA', { style: 'currency', currency: 'CAD'})}</span>

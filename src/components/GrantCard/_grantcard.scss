@@ -34,6 +34,9 @@
     font-size: 12px;
     height: fit-content;
   }
+  &__tag {
+    cursor: pointer;
+  }
   &__tags {
     grid-column: span 3;
     display: flex;
@@ -44,6 +47,8 @@
   &__amount {
     background: white;
     border: 1px solid $forget-me-not;
+    grid-column: span 2;
+    text-align: right;
     // height: fit-content;
   }
   &__status {

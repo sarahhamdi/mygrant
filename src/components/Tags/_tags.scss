@@ -1,6 +1,14 @@
 .grant__tags {
   grid-column: span 3;
+  grid-row: span 2;
   .grant-card__tag {
     cursor: pointer;
+    display: inline-block;
+    height: auto;
+    &--selected {
+      @extend .grant-card__tag;
+      background: $melon;
+    }
   }
 }
+
